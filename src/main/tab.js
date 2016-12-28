@@ -3,7 +3,7 @@ import './tab.css'
 
 const Tab = ({ tab }) => (
   <div className="tab">
-    {tab}
+    <div className="tab-content">React App</div>
   </div>
 )
 

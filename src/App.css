@@ -2,6 +2,10 @@
   height: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   display: flex;
   height: 100%;

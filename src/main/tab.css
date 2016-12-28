@@ -1,26 +1,35 @@
 .tab {
   height: 30px;
-  width: 100px;
+  width: 200px;
   background: #eee;
+}
+
+.tab-content {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  line-height: 30px;
   border-top: 1px solid #ccc;
 }
 
 .tab::before {
   content: '';
-  display: block;
-  width: 30px;
+  display: inline-block;
+  width: 10px;
   height: 30px;
   background: #eee;
   border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   transform: skewx(-20deg);
 }
 
 .tab::after {
   content: '';
-  display: block;
-  width: 30px;
+  display: inline-block;
+  width: 10px;
   height: 30px;
   background: #eee;
   border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   transform: skewx(20deg);
 }

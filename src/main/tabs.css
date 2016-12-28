@@ -1,3 +1,10 @@
 .tabs {
   display: flex;
+  background: #eee;
+  height: 40px;
+  padding-top: 10px;
+}
+
+.tabs > li {
+  /*flex-grow: 1;*/
 }

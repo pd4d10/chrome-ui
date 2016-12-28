@@ -1,3 +1,5 @@
 .browser {
   height: 100%;
+  margin: 16px;
+  border-radius: 4px;
 }
