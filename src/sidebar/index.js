@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'font-awesome/css/font-awesome.css'
-import './Sidebar.css'
+import './sidebar.css'
 
 export default class Sidebar extends Component {
   state = {

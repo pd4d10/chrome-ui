@@ -1,5 +1,5 @@
 .Sidebar {
-  width: 120px;
+  flex-basis: 80px;
 }
 
 .Sidebar li {

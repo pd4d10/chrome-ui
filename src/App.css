@@ -1,3 +1,8 @@
+#root {
+  height: 100%;
+}
+
 .App {
   display: flex;
+  height: 100%;
 }
