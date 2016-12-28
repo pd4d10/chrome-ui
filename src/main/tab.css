@@ -1,0 +1,16 @@
+.tab {
+  height: 30px;
+  width: 100px;
+  background: #eee;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+
+.tab::before {
+  /*content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #f00;*/
+  /*transform: skewx(-20deg);*/
+}
