@@ -2,4 +2,15 @@
   height: 100%;
   margin: 16px;
   border-radius: 4px;
+  border-top: 1px solid #c1c1c1;
+  box-shadow: 0 0 20px #aaa;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
 }

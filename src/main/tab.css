@@ -1,15 +1,18 @@
 .tab {
   height: 30px;
-  width: 200px;
-  background: #eee;
+  font-size: 0;
 }
 
-.tab-content {
-  display: inline-block;
-  font-size: 14px;
-  vertical-align: top;
-  line-height: 30px;
-  border-top: 1px solid #ccc;
+.tab .close {
+  fill: #000;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.tab .close:hover {
+  fill: #fff;
+  background: #f00;
 }
 
 .tab::before {
@@ -33,3 +36,16 @@
   border-top: 1px solid #ccc;
   transform: skewx(20deg);
 }
+
+.tab-content {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  line-height: 30px;
+  background: #eee;
+  border-top: 1px solid #ccc;
+}
+
+/*.tab-content::after {
+  content: '';
+}*/

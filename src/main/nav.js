@@ -36,6 +36,9 @@ class Nav extends PureComponent {
           </svg>
           </li>
         </ul>
+        <form>
+          <input type="text" />
+        </form>
       </div>
     )
   }

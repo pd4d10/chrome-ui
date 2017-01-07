@@ -1,10 +1,17 @@
 .tabs {
   display: flex;
-  background: #eee;
+  background: #ddd;
   height: 40px;
   padding-top: 10px;
 }
 
 .tabs > li {
   /*flex-grow: 1;*/
+}
+
+.tabs .add {
+  background: #d0d0d0;
+  width: 20px;
+  height: 20px;
+  transform: skewx(20deg);
 }

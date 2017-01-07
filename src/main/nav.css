@@ -5,6 +5,7 @@
 
 .nav ul {
   font-size: 0;
+  float: left;
 }
 
 .nav li {
