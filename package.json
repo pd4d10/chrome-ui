@@ -49,6 +49,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
     "postcss-cssnext": "^2.9.0",

@@ -2,6 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTab, removeTab, selectTab, updateUrl } from '../action'
+import classNames from 'classnames'
 import Back from './icons/back'
 import Forward from './icons/forward'
 import Reload from './icons/reload'
@@ -10,24 +11,22 @@ import Setting from './icons/setting'
 import TabClose from './icons/tab-close'
 import Favicon from './icons/favicon'
 import style from './browser.css'
+import { getFavicon } from '../util'
 
-const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url, updateUrl }) => (
+const Browser = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
   <div className={style.browser}>
     <ul className={style.tabs}>
-      {tabs.map(({ id, title }) => (
-        <li key={id} onClick={selectTab(id)} className={style.tab}>
-          <Favicon />
+      {tabs.map(({ id, title, isActive }) => (
+        <li
+          key={id}
+          onClick={selectTab(id)}
+          className={classNames(style.tab, {
+            [style.active]: isActive,
+          })}
+        >
+          <img className={style.favicon} src={getFavicon(url)} />
           <div className={style.tabContent}>{title}</div>
-          <div>
-            <TabClose />
-          </div>
-          <svg
-            onClick={removeTab(id)}
-            className={style.close} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-            <path d="M0 0h24v24H0z" fill="none" />
-          </svg>
+          <TabClose />
         </li>
       ))}
       <li onClick={addTab} className={style.add} />
@@ -47,9 +46,9 @@ const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url, updateUrl
       <a><Setting /></a>
     </div>
     <div>
-      {tabs.map(({ id, url }) => (
+      {tabs.map(({ id, url, isActive }) => (
         <iframe
-          className={`${style.frame} ${id === activeTab ? '' : style.hidden}`}
+          className={`${style.frame} ${isActive ? '' : style.hidden}`}
           src={url}
           key={id}
           onLoad={console.log}
@@ -63,8 +62,8 @@ const mapStateToProps = state => ({
   tabs: Object.keys(state.tabs).map(id => ({
     id,
     ...state.tabs[id],
+    isActive: state.activeTab === id,
   })),
-  activeTab: state.activeTab,
   url: state.tabs[state.activeTab].url,
 })
 const mapDispatchToProps = dispatch => ({
