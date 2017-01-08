@@ -10,6 +10,7 @@ import Home from './icons/home'
 import Setting from './icons/setting'
 import TabClose from './icons/tab-close'
 import Favicon from './icons/favicon'
+import Star from './icons/star'
 import style from './browser.css'
 import { getFavicon } from '../util'
 
@@ -24,7 +25,7 @@ const Browser = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
             [style.active]: isActive,
           })}
         >
-          <img className={style.favicon} src={getFavicon(url)} />
+          <img onLoad={e => console.log(e, 'img')} className={style.favicon} src={getFavicon(url)} />
           <div className={style.tabContent}>{title}</div>
           <TabClose />
         </li>
@@ -39,9 +40,9 @@ const Browser = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
         <Forward />
       </a>
       <a><Reload /></a>
-      <a><Home /></a>
       <form onSubmit={updateUrl}>
         <input type="text" onChange={updateUrl} value={url} />
+        <Star />
       </form>
       <a><Setting /></a>
     </div>

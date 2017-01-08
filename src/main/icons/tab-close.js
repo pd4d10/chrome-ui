@@ -6,7 +6,6 @@ const TabClose = () => (
     zIndex: 100,
     alignSelf: 'center',
     marginLeft: '2px',
-    marginRight: '2px'
   }}>
     <path
       fill="gray" stroke="gray" strokeWidth="2.45"

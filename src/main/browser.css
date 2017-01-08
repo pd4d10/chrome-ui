@@ -1,17 +1,18 @@
 :root {
   --background: #dbdbdb;
-  /*--border: #ccc;*/
-  --border: #f00;
+  --hover: #ccc;
+  --border: #ccc;
   --nav: #f2f2f2;
   --icon: #6d6d6d;
   --icon-hover: #ccc;
   --icon-focus: #aaa;
+  --border-radius: 8px;
 }
 
 .browser {
   height: 100%;
   margin: 16px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   border: 1px solid #c1c1c1;
   box-shadow: 0 0 20px #aaa;
 }
@@ -29,11 +30,11 @@
   display: flex;
   flex-wrap: nowrap;
   background: var(--background);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  height: 37px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  height: 36px;
   padding-top: 8px;
-  padding-left: 80px;
+  padding-left: 79px;
 }
 
 .tabs .add {
@@ -47,33 +48,43 @@
 }
 
 .tab {
-  flex-basis: 216px;
+  flex-basis: 218px;
   display: flex;
   min-width: 0; /* http://stackoverflow.com/questions/34934586/white-space-nowrap-and-flexbox-did-not-work-in-chrome */
   align-items: center;
   position: relative;
-  background: var(--background);
+  background-color: var(--background);
   border-top: 1px solid var(--border);
   margin: 0 5px;
   font-size: 0;
+  &:hover {
+    background: var(--hover);
+    transition: background-color .5s;
+    &::before, &::after {
+      background: var(--hover);
+      transition: background-color .5s;
+    }
+  }
   &.active {
     background: var(--nav);
-    height: 30px;
+    height: 29px;
     border-bottom: 1px solid var(--nav);
+    transition: all 0s;
+    &::before, &::after {
+      z-index: 10;
+      transition: all 0s;
+      align-self: flex-start;
+      height: 28px;
+      background: var(--nav);
+      border-bottom: 1px solid var(--nav);
+    }
   }
   & .favicon {
     z-index: 100;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     margin-left: 4px;
     margin-right: 4px;
-  }
-  &.active::before, &.active::after {
-    z-index: 10;
-    align-self: flex-start;
-    height: 30px;
-    background: var(--nav);
-    border-bottom: 1px solid var(--nav);
   }
   & .close {
     fill: #000;
@@ -92,7 +103,7 @@
     left: 0;
     width: 16px;
     height: 28px;
-    background: var(--background);
+    background-color: var(--background);
     border-left: 1px solid var(--border);
     transform: skewx(-25deg);
     transform-origin: left top;
@@ -104,7 +115,7 @@
     right: 0;
     width: 16px;
     height: 28px;
-    background: var(--background);
+    background-color: var(--background);
     border-right: 1px solid var(--border);
     transform: skewx(25deg);
     transform-origin: right top;
@@ -113,7 +124,8 @@
 
 .tab-content {
   flex-grow: 1;
-  font-size: 14px;
+  padding-left: 2px;
+  font-size: 12.6px;
   line-height: 28px;
   cursor: default;
   max-width: 200px;
@@ -124,13 +136,19 @@
 
 .nav {
   display: flex;
+  align-items: center;
   background: var(--nav);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid #ddd;
+  padding-left: 4px;
+  padding-right: 4px;
+  height: 38px;
   & a {
     border-radius: 2px;
-    margin: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
     padding: 4px;
+    height: 24px;
     &:hover {
       background: var(--icon-hover);
     }
@@ -138,14 +156,35 @@
       background: var(--icon-focus);
     }
   }
-  & svg path {
-    fill: var(--icon);
+  & svg {
+    width: 16px;
+    height: 16px;
+    & path {
+      fill: var(--icon);
+    }
   }
   & form {
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    height: 28px;
+    border-radius: 4px;
+    margin-left: 4px;
+    margin-right: 2px;
+    border: 1px solid var(--border);
+    & svg {
+      margin-right: 4px;
+    }
     & input {
-      display: none;
+      display: block;
+      border: none;
       width: 100%;
+      padding-left: 25px;
+      font-size: 13.6px;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }

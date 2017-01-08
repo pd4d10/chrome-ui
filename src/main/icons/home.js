@@ -2,7 +2,9 @@
 import React from 'react'
 
 const Home = () => (
-  <svg is width=" 16" height=" 16" fill-rule="evenodd" class="vector-svg"><path is fill="gray" stroke="gray" stroke-width="0px" stroke-linecap="round" shape-rendering="geometricPrecision" d="M 3.35 7 L 8 2.5 L 12.65 7 L 12 7 L 12 14 L 4 14 L 4 7 L 3.35 7 L 3.35 7 Z M 2 8.3 L 1.54 8.74 C 1.19 9.09 0.62 9.09 0.26 8.74 C -0.09 8.4 -0.09 7.85 0.26 7.51 L 8 0 L 15.74 7.51 C 16.09 7.85 16.09 8.4 15.74 8.74 C 15.38 9.09 14.81 9.09 14.46 8.74 L 14 8.3 L 14 14.5 C 14 15.5 13.5 16 12.5 16 L 3.5 16 C 2.5 16 2 15.5 2 14.5 L 2 8.3 L 2 8.3 Z"></path></svg>
+  <svg viewBox="0 0 32 32">
+    <path d="M 9 14.46 L 16 7.63 L 23 14.46 L 23 25.13 L 23 25.13 L 23 26 L 22.13 26 L 9.73 26 L 9 26 L 9 25.27 L 9 14.46 L 9 14.46 Z M 6 17.39 L 5.86 17.52 C 5.21 18.16 4.15 18.16 3.49 17.52 C 2.84 16.88 2.84 15.85 3.49 15.21 L 13.63 5.31 L 16 3 L 18.37 5.31 L 28.51 15.21 C 29.16 15.85 29.16 16.88 28.51 17.52 C 27.85 18.16 26.79 18.16 26.14 17.52 L 26 17.39 L 26 27 C 26 28.1 25.1 29 24 29 L 8 29 C 6.9 29 6 28.1 6 27 L 6 17.39 L 6 17.39 Z"></path>
+  </svg>
 )
 
 export default Home
