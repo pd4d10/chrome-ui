@@ -2,28 +2,26 @@ import React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { addTab, removeTab, selectTab, updateUrl } from '../action'
-import './browser.css'
-import './tabs.css'
-import './tab.css'
-import "./nav.css"
+import style from './browser.css'
 
+// Icons from https://material.io/icons/
 const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url }) => (
-  <div className="browser">
-    <ul className="tabs">
+  <div className={style.browser}>
+    <ul className={style.tabs}>
       {tabs.map(({ id, title }) => (
-        <li key={id} onClick={selectTab(id)} className="tab">
-            <div className="tab-content">{title}</div>
+        <li key={id} onClick={selectTab(id)} className={style.tab}>
+            <div className={style.tabContent}>{title}</div>
             <svg
               onClick={removeTab(id)}
-              className="close" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              className={style.close} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
               <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
         </li>
       ))}
-      <li onClick={addTab} className="add"></li>
+      <li onClick={addTab} className={style.add}></li>
     </ul>
-    <div className="nav">
+    <div className={style.nav}>
       <ul>
         <li onClick={() => history.back()}>
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +49,7 @@ const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url }) => (
     <div>
       {tabs.map(({ id, url }) => (
         <iframe
-          className={`frame ${id === activeTab ? '' : 'hidden'}`}
+          className={`${style.frame} ${id === activeTab ? '' : style.hidden}`}
           src={url}
           key={id}
           onLoad={console.log}

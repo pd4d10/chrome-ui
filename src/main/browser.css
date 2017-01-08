@@ -14,3 +14,88 @@
 .hidden {
   display: none;
 }
+
+
+.nav {
+  background: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+  & ul {
+    font-size: 0;
+    float: left;
+  }
+}
+
+.nav li {
+  display: inline-block;
+  margin: 4px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  background: #ddd;
+  height: 40px;
+  padding-top: 10px;
+}
+
+.tabs > li {
+  flex-basis: 200px;
+  display: flex;
+}
+
+.tabs .add {
+  background: #d0d0d0;
+  width: 20px;
+  height: 20px;
+  transform: skewx(20deg);
+}
+
+.tab {
+  height: 30px;
+  font-size: 0;
+}
+
+.tab .close {
+  fill: #000;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.tab .close:hover {
+  fill: #fff;
+  background: #f00;
+}
+
+.tab::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background: #eee;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  transform: skewx(-20deg);
+}
+
+.tab::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background: #eee;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  transform: skewx(20deg);
+}
+
+.tab-content {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 30px;
+  background: #eee;
+  border-top: 1px solid #ccc;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
