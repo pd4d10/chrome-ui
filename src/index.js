@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider} from 'react-redux'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import { v4 } from 'uuid'
-import Container from './App';
+import Container from './App'
 import reducer from './reducer'
-import './index.css';
+import './index.css'
 
 const id = v4()
 
@@ -14,17 +14,17 @@ const presistedState = {
   tabs: {
     [id]: {
       url: 'https://en.wikipedia.org/wiki/Main_Page',
-      title: 'New Tab'
-    }
+      title: 'New Tab',
+    },
   },
 }
 
 const store = createStore(reducer, presistedState,
-window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) // eslint-disable-line
 
 ReactDOM.render(
   <Provider store={store}>
     <Container />
   </Provider>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+)

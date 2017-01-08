@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react'
 import Sidebar from './sidebar'
 import Main from './main'
-import './App.css';
+import './App.css'
 
-class Container extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Sidebar />
-        <Main />
-      </div>
-    );
-  }
-}
+const Container = () => (
+  <div className="App">
+    <Sidebar />
+    <Main />
+  </div>
+)
 
-export default Container;
+export default Container

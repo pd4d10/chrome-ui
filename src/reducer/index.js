@@ -12,8 +12,8 @@ const tabs = (state = {}, action) => {
       return {
         ...state,
         [action.id]: {
-          title: 'New Tab'
-        }
+          title: 'New Tab',
+        },
       }
     case REMOVE_TAB:
       return omit(state, action.id)
@@ -23,7 +23,7 @@ const tabs = (state = {}, action) => {
         [action.id]: {
           ...state[action.id],
           url: action.url,
-        }
+        },
       }
     default:
       return state
@@ -34,7 +34,7 @@ const activeTab = (state = 0, action) => {
   switch (action.type) {
     case ADD_TAB:
     case SELECT_TAB:
-    console.log(action)
+      console.log(action)
       return action.id
     default:
       return state

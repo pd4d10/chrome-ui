@@ -1,7 +1,7 @@
 import { v4 } from 'uuid'
 import { ADD_TAB, REMOVE_TAB, SELECT_TAB, UPDATE_URL } from '../reducer'
 
-export const addTab = data => ({
+export const addTab = () => ({
   type: ADD_TAB,
   id: v4(),
 })
