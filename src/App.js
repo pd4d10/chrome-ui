@@ -1,13 +1,10 @@
 import React from 'react'
-import Sidebar from './sidebar'
-import Main from './main'
+// import Sidebar from './sidebar'
+import Main from './main/browser'
 import './App.css'
 
 const Container = () => (
-  <div className="App">
-    <Sidebar />
-    <Main />
-  </div>
+  <Main />
 )
 
 export default Container

@@ -46,7 +46,7 @@ const Browser = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
       </form>
       <a><Setting /></a>
     </div>
-    <div>
+    <div className={style.content}>
       {tabs.map(({ id, url, isActive }) => (
         <iframe
           className={`${style.frame} ${isActive ? '' : style.hidden}`}
