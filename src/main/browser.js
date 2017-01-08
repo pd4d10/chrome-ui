@@ -6,15 +6,21 @@ import Back from './icons/back'
 import Forward from './icons/forward'
 import Reload from './icons/reload'
 import Home from './icons/home'
+import Setting from './icons/setting'
+import TabClose from './icons/tab-close'
+import Favicon from './icons/favicon'
 import style from './browser.css'
 
-// Icons from https://material.io/icons/
-const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url }) => (
+const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url, updateUrl }) => (
   <div className={style.browser}>
     <ul className={style.tabs}>
       {tabs.map(({ id, title }) => (
         <li key={id} onClick={selectTab(id)} className={style.tab}>
+          <Favicon />
           <div className={style.tabContent}>{title}</div>
+          <div>
+            <TabClose />
+          </div>
           <svg
             onClick={removeTab(id)}
             className={style.close} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -27,19 +33,18 @@ const Browser = ({ tabs, activeTab, addTab, selectTab, removeTab, url }) => (
       <li onClick={addTab} className={style.add} />
     </ul>
     <div className={style.nav}>
-      <ul>
-        <li onClick={() => history.back()}>
-          <Back />
-        </li>
-        <li onClick={() => history.forward()}>
-          <Forward />
-        </li>
-        <li><Reload /></li>
-        <li><Home /></li>
-      </ul>
+      <a onClick={() => history.back()}>
+        <Back />
+      </a>
+      <a onClick={() => history.forward()}>
+        <Forward />
+      </a>
+      <a><Reload /></a>
+      <a><Home /></a>
       <form onSubmit={updateUrl}>
         <input type="text" onChange={updateUrl} value={url} />
       </form>
+      <a><Setting /></a>
     </div>
     <div>
       {tabs.map(({ id, url }) => (
@@ -69,7 +74,11 @@ const mapDispatchToProps = dispatch => ({
     event.stopPropagation()
     return dispatch(removeTab(id))
   },
-  updateUrl: event => dispatch(updateUrl(event.target.value)),
+  // updateUrl: event => dispatch(updateUrl(event.target.value)),
+  updateUrl: event => {
+    event.preventDefault()
+    console.log(event)
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Browser)

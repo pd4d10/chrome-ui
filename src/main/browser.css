@@ -1,3 +1,10 @@
+:root {
+  --nav: #f2f2f2;
+  --icon: #6d6d6d;
+  --icon-hover: #ccc;
+  --icon-focus: #aaa;
+}
+
 .browser {
   height: 100%;
   margin: 16px;
@@ -17,15 +24,28 @@
 
 
 .nav {
-  background: #f2f2f2;
+  display: flex;
+  background: var(--nav);
   border-bottom: 1px solid #ddd;
-  & ul {
-    font-size: 0;
-    float: left;
-  }
-  & li {
-    display: inline-block;
+  & a {
+    border-radius: 2px;
     margin: 4px;
+    padding: 4px;
+    &:hover {
+      background: var(--icon-hover);
+    }
+    &:focus {
+      background: var(--icon-focus);
+    }
+  }
+  & svg path {
+    fill: var(--icon);
+  }
+  & form {
+    flex-grow: 1;
+    & input {
+      width: 100%;
+    }
   }
 }
 
@@ -47,7 +67,7 @@
 .tab {
   flex-basis: 200px;
   display: flex;
-  background: #eee;
+  background: var(--nav);
   border-top: 1px solid #ccc;
   margin: 0 5px;
   height: 30px;
@@ -68,7 +88,6 @@
     display: inline-block;
     width: 10px;
     height: 30px;
-    background: #eee;
     border-left: 1px solid #ccc;
     transform: skewx(-20deg);
     transform-origin: left top;
@@ -78,7 +97,6 @@
     display: inline-block;
     width: 10px;
     height: 30px;
-    background: #eee;
     border-right: 1px solid #ccc;
     transform: skewx(20deg);
     transform-origin: right top;
@@ -89,7 +107,6 @@
   flex-grow: 1;
   font-size: 14px;
   line-height: 30px;
-  background: #eee;
   max-width: 200px;
   text-overflow: ellipsis;
   overflow: hidden;
