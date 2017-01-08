@@ -47,9 +47,13 @@
 .tab {
   flex-basis: 200px;
   display: flex;
+  background: #eee;
+  border-top: 1px solid #ccc;
+  margin: 0 5px;
   height: 30px;
   font-size: 0;
   & .close {
+    align-self: center;
     fill: #000;
     width: 12px;
     height: 12px;
@@ -66,8 +70,8 @@
     height: 30px;
     background: #eee;
     border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
     transform: skewx(-20deg);
+    transform-origin: left top;
   }
   &::after {
     content: '';
@@ -76,8 +80,8 @@
     height: 30px;
     background: #eee;
     border-right: 1px solid #ccc;
-    border-top: 1px solid #ccc;
     transform: skewx(20deg);
+    transform-origin: right top;
   }
 }
 
@@ -86,7 +90,6 @@
   font-size: 14px;
   line-height: 30px;
   background: #eee;
-  border-top: 1px solid #ccc;
   max-width: 200px;
   text-overflow: ellipsis;
   overflow: hidden;
