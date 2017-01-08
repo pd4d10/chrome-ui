@@ -38,9 +38,9 @@
 }
 
 .tab-content {
-  display: inline-block;
+  /*display: inline-block;*/
+  flex-grow: 1;
   font-size: 14px;
-  vertical-align: top;
   line-height: 30px;
   background: #eee;
   border-top: 1px solid #ccc;

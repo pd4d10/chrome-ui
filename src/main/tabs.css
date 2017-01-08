@@ -1,12 +1,14 @@
 .tabs {
   display: flex;
+  flex-wrap: nowrap;
   background: #ddd;
   height: 40px;
   padding-top: 10px;
 }
 
 .tabs > li {
-  /*flex-grow: 1;*/
+  flex-basis: 200px;
+  display: flex;
 }
 
 .tabs .add {
