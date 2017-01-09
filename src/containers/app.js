@@ -11,10 +11,11 @@ import Setting from './icons/setting'
 import TabClose from './icons/tab-close'
 import Favicon from './icons/favicon'
 import Star from './icons/star'
+import './app.css'
 import style from './browser.css'
 import { getFavicon } from '../util'
 
-const Browser = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
+const App = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
   <div className={style.browser}>
     <ul className={style.tabs}>
       {tabs.map(({ id, title, isActive }) => (
@@ -67,6 +68,7 @@ const mapStateToProps = state => ({
   })),
   url: state.tabs[state.activeTab].url,
 })
+
 const mapDispatchToProps = dispatch => ({
   addTab: () => dispatch(addTab()),
   selectTab: id => () => dispatch(selectTab(id)),
@@ -81,4 +83,4 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Browser)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

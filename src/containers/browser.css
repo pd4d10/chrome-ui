@@ -13,7 +13,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  /*margin: 16px;*/
   border-radius: var(--border-radius);
   border: 1px solid #c1c1c1;
   box-shadow: 0 0 20px #aaa;
@@ -127,6 +126,7 @@
   line-height: 28px;
   cursor: default;
   max-width: 200px;
+  user-select: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;

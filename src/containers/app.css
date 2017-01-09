@@ -16,3 +16,12 @@ ul {
 li {
   list-style: none;
 }
+
+:global(#root) {
+  height: 100%;
+  padding: 24px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

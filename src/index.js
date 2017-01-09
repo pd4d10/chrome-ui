@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { v4 } from 'uuid'
-import Container from './App'
+import App from './containers/app'
 import reducer from './reducer'
-import './index.css'
 
 const id = v4()
 
@@ -14,7 +13,7 @@ const presistedState = {
   tabs: {
     [id]: {
       url: 'https://en.wikipedia.org/wiki/Main_Page',
-      title: 'New Tab',
+      title: 'Wikipedia - Wikipedia',
     },
   },
 }
@@ -24,7 +23,7 @@ window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) //
 
 ReactDOM.render(
   <Provider store={store}>
-    <Container />
+    <App />
   </Provider>,
   document.getElementById('root'),
 )
