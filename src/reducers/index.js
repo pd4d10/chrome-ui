@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
 import { omit } from 'lodash'
+import history from './history'
 
-export const ADD_TAB = 'ADD_TAB'
-export const REMOVE_TAB = 'REMOVE_TAB'
-export const SELECT_TAB = 'SELECT_TAB'
-export const UPDATE_URL = 'UPDATE_TITLE'
+import { ADD_TAB, CLOSE_TAB, SELECT_TAB, UPDATE_URL } from '../actions'
 
 const tabs = (state = {}, action) => {
   switch (action.type) {
@@ -15,7 +13,7 @@ const tabs = (state = {}, action) => {
           title: 'New Tab',
         },
       }
-    case REMOVE_TAB:
+    case CLOSE_TAB:
       return omit(state, action.id)
     case UPDATE_URL:
       return {
@@ -34,7 +32,6 @@ const activeTab = (state = 0, action) => {
   switch (action.type) {
     case ADD_TAB:
     case SELECT_TAB:
-      console.log(action)
       return action.id
     default:
       return state
@@ -44,4 +41,5 @@ const activeTab = (state = 0, action) => {
 export default combineReducers({
   tabs,
   activeTab,
+  history,
 })

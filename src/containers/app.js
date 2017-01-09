@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTab, removeTab, selectTab, updateUrl } from '../action'
+import { addTab, closeTab, selectTab, updateUrl } from '../actions'
 import classNames from 'classnames'
 import Back from './icons/back'
 import Forward from './icons/forward'
@@ -15,7 +15,7 @@ import './app.css'
 import style from './browser.css'
 import { getFavicon } from '../util'
 
-const App = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
+const App = ({ tabs, addTab, selectTab, closeTab, url, updateUrl }) => (
   <div className={style.browser}>
     <ul className={style.tabs}>
       {tabs.map(({ id, title, isActive }) => (
@@ -28,7 +28,7 @@ const App = ({ tabs, addTab, selectTab, removeTab, url, updateUrl }) => (
         >
           <img onLoad={e => console.log(e, 'img')} className={style.favicon} src={getFavicon(url)} />
           <div className={style.tabContent}>{title}</div>
-          <TabClose />
+          <TabClose onClick={closeTab(id)} />
         </li>
       ))}
       <li onClick={addTab} className={style.add} />
@@ -72,9 +72,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addTab: () => dispatch(addTab()),
   selectTab: id => () => dispatch(selectTab(id)),
-  removeTab: id => (event) => {
+  closeTab: id => (event) => {
     event.stopPropagation()
-    return dispatch(removeTab(id))
+    return dispatch(closeTab(id))
   },
   // updateUrl: event => dispatch(updateUrl(event.target.value)),
   updateUrl: event => {

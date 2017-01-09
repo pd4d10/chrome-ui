@@ -1,13 +1,17 @@
 import { v4 } from 'uuid'
-import { ADD_TAB, REMOVE_TAB, SELECT_TAB, UPDATE_URL } from '../reducer'
+
+export const ADD_TAB = 'ADD_TAB'
+export const CLOSE_TAB = 'CLOSE_TAB'
+export const SELECT_TAB = 'SELECT_TAB'
+export const UPDATE_URL = 'UPDATE_TITLE'
 
 export const addTab = () => ({
   type: ADD_TAB,
   id: v4(),
 })
 
-export const removeTab = id => ({
-  type: REMOVE_TAB,
+export const closeTab = id => ({
+  type: CLOSE_TAB,
   id,
 })
 
