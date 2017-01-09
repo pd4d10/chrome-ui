@@ -1,5 +1,4 @@
 import React from 'react'
-// import Sidebar from './sidebar'
 import Main from './main/browser'
 import './App.css'
 
