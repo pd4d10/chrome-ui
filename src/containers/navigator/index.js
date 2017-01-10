@@ -6,9 +6,10 @@ import Forward from '../../components/forward'
 import Reload from '../../components/reload'
 import Star from '../../components/star'
 import Setting from '../../components/setting'
+import { changeInput } from '../../actions'
 
 /* eslint-disable */
-const Navigator = ({ url, updateUrl }) => (
+const Navigator = ({ url, dispatch }) => (
   <div className={style.nav}>
     <a onClick={console.log}>
       <Back />
@@ -17,8 +18,12 @@ const Navigator = ({ url, updateUrl }) => (
       <Forward />
     </a>
     <a onClick={console.log}><Reload /></a>
-    <form onSubmit={updateUrl}>
-      <input type="text" onChange={updateUrl} value={url} />
+    <form onSubmit={() => {}}>
+      <input
+        type="text"
+        onChange={event => dispatch(changeInput(event.target.value))}
+        value={url}
+      />
       <Star />
     </form>
     <a><Setting /></a>
@@ -31,7 +36,8 @@ Navigator.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  url: state.tabs[state.activeTab].url,
+  // url: state.tabs[state.activeTab].url,
+  url: state.input,
   updateUrl: () => {},
 })
 

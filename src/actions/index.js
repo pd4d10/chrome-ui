@@ -4,6 +4,7 @@ export const ADD_TAB = 'ADD_TAB'
 export const CLOSE_TAB = 'CLOSE_TAB'
 export const SELECT_TAB = 'SELECT_TAB'
 export const UPDATE_URL = 'UPDATE_TITLE'
+export const CHANGE_INPUT = 'CHANGE_INPUT'
 
 export const addTab = () => ({
   type: ADD_TAB,
@@ -24,4 +25,9 @@ export const updateUrl = ({ id, url }) => ({
   type: UPDATE_URL,
   id,
   url,
+})
+
+export const changeInput = value => ({
+  type: CHANGE_INPUT,
+  value,
 })
