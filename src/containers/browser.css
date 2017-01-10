@@ -1,13 +1,4 @@
-:root {
-  --background: #dbdbdb;
-  --hover: #ccc;
-  --border: #ccc;
-  --nav: #f2f2f2;
-  --icon: #6d6d6d;
-  --icon-hover: #ccc;
-  --icon-focus: #aaa;
-  --border-radius: 8px;
-}
+@import url(../variables);
 
 .browser {
   display: flex;
@@ -16,90 +7,6 @@
   border-radius: var(--border-radius);
   border: 1px solid #c1c1c1;
   box-shadow: 0 0 20px #aaa;
-}
-
-.hidden {
-  display: none;
-}
-
-.tabs {
-  display: flex;
-  flex-wrap: nowrap;
-  background: var(--background);
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  height: 36px;
-  padding-top: 8px;
-  padding-left: 79px;
-  padding-right: 20px;
-  & .add {
-    background: #d0d0d0;
-    width: 26px;
-    height: 15px;
-    border-radius: 2px;
-    margin-left: 8px;
-    border: 1px solid var(--border);
-    align-self: center;
-    transform: skewx(25deg);
-    &:hover {
-      background: #eee;
-    }
-  }
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  background: var(--nav);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid #ddd;
-  padding-left: 4px;
-  padding-right: 4px;
-  height: 38px;
-  & a {
-    border-radius: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding: 4px;
-    height: 24px;
-    &:hover {
-      background: var(--icon-hover);
-    }
-    &:focus {
-      background: var(--icon-focus);
-    }
-  }
-  & svg {
-    width: 16px;
-    height: 16px;
-    & path {
-      fill: var(--icon);
-    }
-  }
-  & form {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    background: #fff;
-    height: 28px;
-    border-radius: 4px;
-    margin-left: 4px;
-    margin-right: 2px;
-    border: 1px solid var(--border);
-    & svg {
-      margin-right: 4px;
-    }
-    & input {
-      display: block;
-      border: none;
-      width: 100%;
-      padding-left: 25px;
-      font-size: 13.6px;
-      &:focus {
-        outline: none;
-      }
-    }
-  }
 }
 
 .content {

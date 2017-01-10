@@ -1,0 +1,10 @@
+:root {
+  --background: #dbdbdb;
+  --hover: #ccc;
+  --border: #ccc;
+  --nav: #f2f2f2;
+  --icon: #6d6d6d;
+  --icon-hover: #ccc;
+  --icon-focus: #aaa;
+  --border-radius: 8px;
+}

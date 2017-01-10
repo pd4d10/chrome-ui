@@ -1,0 +1,56 @@
+@import url(../../variables.css);
+
+.nav {
+  display: flex;
+  align-items: center;
+  background: var(--nav);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid #ddd;
+  padding-left: 4px;
+  padding-right: 4px;
+  height: 38px;
+  & a {
+    border-radius: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 4px;
+    height: 24px;
+    &:hover {
+      background: var(--icon-hover);
+    }
+    &:focus {
+      background: var(--icon-focus);
+    }
+  }
+  & svg {
+    width: 16px;
+    height: 16px;
+    & path {
+      fill: var(--icon);
+    }
+  }
+  & form {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    height: 28px;
+    border-radius: 4px;
+    margin-left: 4px;
+    margin-right: 2px;
+    border: 1px solid var(--border);
+    & svg {
+      margin-right: 4px;
+    }
+    & input {
+      display: block;
+      border: none;
+      width: 100%;
+      padding-left: 25px;
+      font-size: 13.6px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
