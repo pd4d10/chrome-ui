@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import { v4 } from 'uuid'
 import App from './containers/app'
 import reducers from './reducers'
@@ -18,8 +19,12 @@ const presistedState = {
   },
 }
 
-const store = createStore(reducers, presistedState,
-window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) // eslint-disable-line
+const middwares = [thunk]
+if (window.__REDUX_DEVTOOLS_EXTENSION__) { // eslint-disable-line
+  // middwares.push(window.__REDUX_DEVTOOLS_EXTENSION__()) // eslint-disable-line
+}
+
+const store = createStore(reducers, presistedState, applyMiddleware(...middwares))
 
 ReactDOM.render(
   <Provider store={store}>
