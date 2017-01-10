@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { v4 } from 'uuid'
@@ -19,12 +19,11 @@ const presistedState = {
   },
 }
 
-const middwares = [thunk]
-if (window.__REDUX_DEVTOOLS_EXTENSION__) { // eslint-disable-line
-  // middwares.push(window.__REDUX_DEVTOOLS_EXTENSION__()) // eslint-disable-line
-}
-
-const store = createStore(reducers, presistedState, applyMiddleware(...middwares))
+const middlewares = [thunk]
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose // eslint-disable-line
+const store = createStore(reducers, presistedState, composeEnhancers(
+  applyMiddleware(...middlewares),
+))
 
 ReactDOM.render(
   <Provider store={store}>
