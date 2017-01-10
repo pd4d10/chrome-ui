@@ -1,43 +1,40 @@
 /* eslint-disable */
 import React from 'react'
 import { connect } from 'react-redux'
+import { pick } from 'lodash'
 import { addTab, closeTab, selectTab, updateUrl } from '../actions'
 import classNames from 'classnames'
-import Back from './icons/back'
-import Forward from './icons/forward'
-import Reload from './icons/reload'
+import Back from '../components/back'
+import Forward from '../components/forward'
+import Reload from '../components/reload'
 import Home from './icons/home'
 import Setting from './icons/setting'
-import TabClose from './icons/tab-close'
 import Favicon from './icons/favicon'
 import Star from './icons/star'
 import './app.css'
 import style from './browser.css'
 import { getFavicon } from '../util'
+import Tab from '../components/tab'
+import Frame from '../components/frame'
 
 const App = ({ tabs, addTab, selectTab, closeTab, url, updateUrl }) => (
   <div className={style.browser}>
     <ul className={style.tabs}>
-      {tabs.map(({ id, title, isActive }) => (
-        <li
-          key={id}
-          onClick={selectTab(id)}
-          className={classNames(style.tab, {
-            [style.active]: isActive,
-          })}
-        >
-          <img onLoad={e => console.log(e, 'img')} className={style.favicon} src={getFavicon(url)} />
-          <div className={style.tabContent}>{title}</div>
-          <TabClose onClick={closeTab(id)} />
-        </li>
+      {tabs.map(tab => (
+        <Tab
+          key={tab.id}
+          {...pick(tab, ['id', 'url', 'title', 'isActive'])}
+          select={selectTab(tab.id)}
+          close={closeTab(tab.id)}
+        />
       ))}
       <li onClick={addTab} className={style.add} />
     </ul>
     <div className={style.nav}>
-      <a onClick={() => history.back()}>
+      <a>
         <Back />
       </a>
-      <a onClick={() => history.forward()}>
+      <a>
         <Forward />
       </a>
       <a><Reload /></a>
@@ -48,13 +45,8 @@ const App = ({ tabs, addTab, selectTab, closeTab, url, updateUrl }) => (
       <a><Setting /></a>
     </div>
     <div className={style.content}>
-      {tabs.map(({ id, url, isActive }) => (
-        <iframe
-          className={`${style.frame} ${isActive ? '' : style.hidden}`}
-          src={url}
-          key={id}
-          onLoad={console.log}
-        />
+      {tabs.map(tab => (
+        <Frame {...pick(tab, ['id','url','isActive'])} />
       ))}
     </div>
   </div>
@@ -77,10 +69,10 @@ const mapDispatchToProps = dispatch => ({
     return dispatch(closeTab(id))
   },
   // updateUrl: event => dispatch(updateUrl(event.target.value)),
-  updateUrl: event => {
+  updateUrl: (event) => {
     event.preventDefault()
     console.log(event)
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
