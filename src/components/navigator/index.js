@@ -5,23 +5,29 @@ import Forward from '../forward'
 import Reload from '../reload'
 import Star from '../star'
 import Setting from '../setting'
-import { changeInput, load } from '../../actions'
+import { changeInput, focusInput, load } from '../../actions'
 
-const handleSubmit = (url, dispatch) => (event) => {
+const handleSubmit = dispatch => (event) => {
   event.preventDefault()
-  return dispatch(load(url))
+  return dispatch(load())
 }
 
 const handleChange = dispatch => event => dispatch(changeInput(event.target.value))
 
-/* eslint-disable */
-const Navigator = ({ url, dispatch }) => (
+const handleFocus = ({ dispatch, value }) => () => dispatch(focusInput(value))
+
+const Navigator = ({ url, isInputFocus, input, dispatch }) => (
   <div className={style.nav}>
     <a><Back /></a>
     <a><Forward /></a>
     <a><Reload /></a>
-    <form onSubmit={handleSubmit(url, dispatch)}>
-      <input type="text" onChange={handleChange(dispatch)} value={url} />
+    <form onSubmit={handleSubmit(dispatch)}>
+      <input
+        type="text"
+        value={isInputFocus ? input : url}
+        onChange={handleChange(dispatch)}
+        onFocus={handleFocus({ dispatch, url })}
+      />
       <Star />
     </form>
     <a><Setting /></a>
@@ -29,7 +35,10 @@ const Navigator = ({ url, dispatch }) => (
 )
 
 Navigator.propTypes = {
-  url: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  isInputFocus: PropTypes.bool.isRequired,
+  input: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 }
 
 export default Navigator

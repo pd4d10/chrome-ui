@@ -9,7 +9,7 @@ import Frame from '../components/frame'
 const App = props => (
   <div className={style.app}>
     <Tabs {...props} />
-    <Navigator {...pick(props, 'url')} />
+    <Navigator {...pick(props, ['dispatch', 'url', 'isInputFocus', 'input'])} />
     <Frame {...props} />
   </div>
 )
@@ -21,6 +21,8 @@ const mapStateToProps = state => ({
     isActive: state.activeTab === id,
   })),
   url: state.tabs[state.activeTab].url,
+  isInputFocus: state.isInputFocus,
+  input: state.input,
 })
 
 export default connect(mapStateToProps)(App)

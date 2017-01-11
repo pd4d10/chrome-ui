@@ -15,6 +15,8 @@ export default function tabs(state = {}, action) {
         title: 'New Tab',
         url: '',
         isLoading: false,
+        isLoaded: false,
+        isFailed: false,
       })
     case CLOSE_TAB:
       return state.without(action.id)

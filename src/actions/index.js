@@ -5,6 +5,7 @@ export const CLOSE_TAB = 'CLOSE_TAB'
 export const SELECT_TAB = 'SELECT_TAB'
 export const UPDATE_URL = 'UPDATE_TITLE'
 export const CHANGE_INPUT = 'CHANGE_INPUT'
+export const FOCUS_INPUT = 'FOCUS_INPUT'
 
 export const LOAD_START = 'LOAD_START'
 export const LOAD_SUCCESS = 'LOAD_SUCCESS'
@@ -17,9 +18,10 @@ export const addTab = () => ({
 
 export const closeTab = id => (dispatch, getState) => {
   const state = getState()
-  const allIds = Object.keys(state.tabs)
+  const { tabs } = state
+  const allIds = Object.keys(tabs)
 
-  // do not close last tab
+  // Do not close last tab
   if (allIds.length <= 1) {
     return
   }
@@ -40,6 +42,7 @@ export const closeTab = id => (dispatch, getState) => {
     type: CLOSE_TAB,
     id,
     activeId,
+    url: tabs[activeId].url,
   })
 }
 
@@ -60,6 +63,11 @@ export const changeInput = value => ({
   value,
 })
 
+export const focusInput = value => ({
+  type: FOCUS_INPUT,
+  value,
+})
+
 const loadStart = ({ id, url }) => ({
   type: LOAD_START,
   id,
@@ -76,8 +84,10 @@ const loadFail = id => ({
   id,
 })
 
-export const load = url => (dispatch, getState) => {
-  const id = getState().activeTab
+export const load = () => (dispatch, getState) => {
+  const state = getState()
+  const id = state.activeTab
+  const url = state.input
   dispatch(loadStart({ id, url }))
 
   // HACK
