@@ -29,6 +29,7 @@ export default class Input extends Component {
       <input
         id="location"
         type="text"
+        placeholder="Type URL here and press Enter"
         value={isInputFocus ? input : url}
         onChange={this.handleChange}
         onFocus={this.handleFocus}

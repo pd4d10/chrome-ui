@@ -1,20 +1,19 @@
 import { capitalize } from 'lodash'
 
-// Guess favicon from url
-export function getFavicon(url) {
-  const a = document.createElement('a')
-  a.href = url
-
-  return `${a.protocol}//${a.host}/favicon.ico`
-}
-
-// en.wikipedia.org
-// http://en.wikipedia.org
+// Add 'http://' prefix to a URL
 export function completeUrl(url) {
   if (/https?:\/\//.test(url)) {
     return url
   }
   return `http://${url}`
+}
+
+// Guess favicon from url
+export function getFavicon(url) {
+  const a = document.createElement('a')
+  a.href = completeUrl(url)
+
+  return `${a.protocol}//${a.host}/favicon.ico`
 }
 
 // Fake title
@@ -29,4 +28,9 @@ export function getTitle(url) {
     default:
       return url
   }
+}
+
+// Github start widget
+export function getGithubWidget() {
+  return '<iframe src="https://ghbtns.com/github-btn.html?user=pd4d10&repo=chrome-ui&type=star" frameborder="0" scrolling="0"></iframe>'
 }

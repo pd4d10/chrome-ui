@@ -21,7 +21,7 @@ const Tab = ({
     })}
   >
     <img
-      src={getFavicon(url)}
+      src={url === '' ? require('../favicon.svg') : getFavicon(url)}
       className={style.favicon}
       alt="favicon"
     />

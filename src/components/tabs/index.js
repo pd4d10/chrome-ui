@@ -3,6 +3,7 @@ import { pick } from 'lodash'
 import { addTab, selectTab, closeTab } from '../../actions'
 import Tab from '../tab'
 import style from './tabs.css'
+import { getGithubWidget } from '../../util'
 
 /* eslint-disable */
 const Tabs = ({ tabs, dispatch }) => (
@@ -19,15 +20,9 @@ const Tabs = ({ tabs, dispatch }) => (
           }}
         />
       ))}
+      <div onClick={() => dispatch(addTab())} className={style.add} />
     </ul>
-    <div onClick={() => dispatch(addTab())} className={style.add} />
-    <iframe
-      src="https://ghbtns.com/github-btn.html?user=pd4d10&repo=chrome-ui&type=star"
-      frameBorder="0"
-      scrolling="0"
-      width="53px"
-      height="20px"
-    />
+    <div className={style.widget} dangerouslySetInnerHTML={{__html:getGithubWidget()}} />
   </div>
 )
 

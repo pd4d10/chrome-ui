@@ -9,12 +9,11 @@ import App from './containers/app'
 import reducers from './reducers'
 
 const id = v4()
-
 const presistedState = Immutable({
   activeTab: id,
   tabs: {
     [id]: {
-      url: 'https://en.wikipedia.org/wiki/Main_Page',
+      url: 'en.wikipedia.org',
       title: 'Wikipedia',
       isLoading: true,
       isLoaded: false,

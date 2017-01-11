@@ -6,7 +6,7 @@ import {
   LOAD_SUCCESS,
   LOAD_FAIL,
 } from '../actions'
-import { completeUrl, getTitle } from '../util'
+import { getTitle } from '../util'
 
 export default function tabs(state = {}, action) {
   switch (action.type) {
@@ -26,7 +26,7 @@ export default function tabs(state = {}, action) {
       return state
         .setIn([action.id, 'isLoading'], true)
         .setIn([action.id, 'isLoaded'], false)
-        .setIn([action.id, 'url'], completeUrl(action.url))
+        .setIn([action.id, 'url'], action.url)
         .setIn([action.id, 'title'], getTitle(action.url))
     case LOAD_SUCCESS:
       return state
