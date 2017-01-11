@@ -1,7 +1,7 @@
 /* eslint-disable */
-import React from 'react'
+import React, { PropTypes } from 'react'
 import classNames from 'classnames'
-import getFavicon from '../../util'
+import { getFavicon } from '../../util'
 import TabClose from '../tab-close'
 import style from './tab.css'
 
@@ -21,8 +21,7 @@ const Tab = ({
     })}
   >
     <img
-      onLoad={e => console.log(e, 'img')}
-      // src={getFavicon(url)}
+      src={getFavicon(url)}
       className={style.favicon}
       alt="favicon"
     />
@@ -30,5 +29,14 @@ const Tab = ({
     <TabClose onClick={close} />
   </li>
 )
+
+Tab.propTypes = {
+  id: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  select: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
+}
 
 export default Tab
