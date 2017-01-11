@@ -1,11 +1,11 @@
 .content {
   flex-grow: 1;
   display: flex;
-}
 
-.frame {
-  border: 0;
-  width: 100%;
+  & iframe {
+    border: 0;
+    width: 100%
+  }
 }
 
 .hidden {

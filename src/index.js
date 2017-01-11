@@ -16,8 +16,12 @@ const presistedState = Immutable({
     [id]: {
       url: 'https://en.wikipedia.org/wiki/Main_Page',
       title: 'Wikipedia - Wikipedia',
+      isLoading: true,
+      isLoaded: false,
+      isFailed: false,
     },
   },
+  input: '',
 })
 
 const middlewares = [thunk]

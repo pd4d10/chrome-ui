@@ -6,7 +6,7 @@ import Forward from '../../components/forward'
 import Reload from '../../components/reload'
 import Star from '../../components/star'
 import Setting from '../../components/setting'
-import { changeInput } from '../../actions'
+import { changeInput, load } from '../../actions'
 
 /* eslint-disable */
 const Navigator = ({ url, dispatch }) => (
@@ -18,7 +18,10 @@ const Navigator = ({ url, dispatch }) => (
       <Forward />
     </a>
     <a onClick={console.log}><Reload /></a>
-    <form onSubmit={() => {}}>
+    <form onSubmit={event => {
+      event.preventDefault()
+      return dispatch(load(url))
+    }}>
       <input
         type="text"
         onChange={event => dispatch(changeInput(event.target.value))}

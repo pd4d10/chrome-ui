@@ -5,7 +5,7 @@ export default function input(state = '', action) {
     case CHANGE_INPUT:
       return action.value
     case SELECT_TAB:
-      return action.url || ''
+      return action.url
     case ADD_TAB:
       return ''
     default:
