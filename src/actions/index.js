@@ -30,6 +30,7 @@ export const closeTab = id => (dispatch, getState) => {
 
   // Do not close last tab
   if (allIds.length <= 1) {
+    alert('This is the last tab :)') // eslint-disable-line
     return
   }
 
@@ -96,6 +97,10 @@ const loadFail = id => ({
 })
 
 export const load = () => (dispatch, getState) => {
+  // Ugly hack either
+  // Make loaction input blur after submit
+  document.querySelector('#location').blur()
+
   const state = getState()
   const id = state.activeTab
   const url = state.input

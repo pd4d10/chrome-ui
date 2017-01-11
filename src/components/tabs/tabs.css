@@ -1,4 +1,8 @@
-@import url(../../variables.css);
+:root {
+  --background: #dbdbdb;
+  --border: #bbb;
+  --border-radius: 8px;
+}
 
 .container {
   display: flex;
@@ -28,7 +32,7 @@
   align-self: center;
   transform: skewx(25deg);
   &:hover {
-    background: #eee;
+    background: #d9d9d9;
   }
 }
 

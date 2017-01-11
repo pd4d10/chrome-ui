@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react'
 import classNames from 'classnames'
+import { completeUrl } from '../../util'
 import { loadSuccess } from '../../actions'
 import style from './frame.css'
+
+const handleLoad = ({ dispatch, id }) => () => dispatch(loadSuccess(id))
 
 const Frame = ({ tabs, dispatch }) => (
   <div className={style.content}>
@@ -15,9 +18,9 @@ const Frame = ({ tabs, dispatch }) => (
     ) : (
       <iframe
         className={classNames({ [style.hidden]: !isActive })}
-        src={url}
+        src={completeUrl(url)}
         key={id}
-        onLoad={() => dispatch(loadSuccess(id))}
+        onLoad={handleLoad({ dispatch, id })}
       />
     )))}
   </div>

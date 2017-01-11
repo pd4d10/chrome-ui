@@ -1,12 +1,8 @@
 :root {
   --background: #dbdbdb;
   --hover: #eee;
-  --border: #ccc;
+  --border: #bbb;
   --nav: #f2f2f2;
-  --icon: #6d6d6d;
-  --icon-hover: #ccc;
-  --icon-focus: #aaa;
-  --border-radius: 8px;
 }
 
 .tab {
@@ -30,10 +26,10 @@
     background: var(--nav);
     height: 29px;
     border-bottom: 1px solid var(--nav);
-    /*transition: all 0s;*/
+    transition: all 0s;
     &::before, &::after {
       z-index: 10;
-      /*transition: all 0s;*/
+      transition: all 0s;
       align-self: flex-start;
       height: 28px;
       background: var(--nav);

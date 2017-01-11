@@ -1,4 +1,11 @@
-@import url(../../variables.css);
+:root {
+  --hover: #ccc;
+  --border: #bbb;
+  --nav: #f2f2f2;
+  --icon: #6d6d6d;
+  --icon-hover: #dfdfdf;
+  --icon-focus: #aaa;
+}
 
 .nav {
   display: flex;
@@ -38,7 +45,7 @@
     border-radius: 4px;
     margin-left: 4px;
     margin-right: 2px;
-    border: 1px solid var(--border);
+    border: 1px solid #ccc;
     &.active {
       border: 1px solid #399df7;
       height: 26px;

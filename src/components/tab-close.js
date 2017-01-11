@@ -1,33 +1,15 @@
-import React, { PureComponent } from 'react'
+/* eslint-disable */
+import React from 'react'
+import style from './tab-close.css'
 
-export default class TabClose extends PureComponent {
-  constructor() {
-    super()
-    this.state = {
-      hovered: false,
-    }
-  }
+const TabClose = props => (
+  <svg
+    viewBox="0 0 24 24"
+    className={style.close}
+    {...props}
+  >
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </svg>
+)
 
-  render() {
-    return (
-      <svg
-        viewBox="0 0 32 32" width="16" height="16" style={{
-          zIndex: 100,
-          alignSelf: 'center',
-          marginLeft: '2px',
-        }}
-        onMouseEnter={() => this.setState({ hovered: true })}
-        onMouseLeave={() => this.setState({ hovered: false })}
-        {...this.props}
-      >
-        {this.state.hovered && (
-          <path fill="#f00" d="M 16 16 m -14 0 a 14 14 0 1 0 28 0 a 14 14 0 1 0 -28 0" />
-        )}
-        <path
-          fill="gray" stroke="gray" strokeWidth="2"
-          d="M 10.25 10.25 l 11.5 11.5 M 10.25 21.75 l 11.5 -11.5"
-        />
-      </svg>
-    )
-  }
-}
+export default TabClose

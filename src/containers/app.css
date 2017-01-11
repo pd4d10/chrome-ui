@@ -1,4 +1,6 @@
-@import url(../variables);
+:root {
+  --border-radius: 8px;
+}
 
 body {
   margin: 0;
