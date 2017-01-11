@@ -15,7 +15,7 @@ const presistedState = Immutable({
   tabs: {
     [id]: {
       url: 'https://en.wikipedia.org/wiki/Main_Page',
-      title: 'Wikipedia - Wikipedia',
+      title: 'Wikipedia',
       isLoading: true,
       isLoaded: false,
       isFailed: false,

@@ -6,15 +6,22 @@ export const SELECT_TAB = 'SELECT_TAB'
 export const UPDATE_URL = 'UPDATE_TITLE'
 export const CHANGE_INPUT = 'CHANGE_INPUT'
 export const FOCUS_INPUT = 'FOCUS_INPUT'
+export const BLUR_INPUT = 'BLUR_INPUT'
 
 export const LOAD_START = 'LOAD_START'
 export const LOAD_SUCCESS = 'LOAD_SUCCESS'
 export const LOAD_FAIL = 'LOAD_FAIL'
 
-export const addTab = () => ({
-  type: ADD_TAB,
-  id: v4(),
-})
+export const addTab = () => {
+  // This is an ugly hack.
+  // When new tab is opened, location input should focus.
+  // It is too complex to do this in React way. 🌧
+  document.querySelector('#location').focus()
+  return {
+    type: ADD_TAB,
+    id: v4(),
+  }
+}
 
 export const closeTab = id => (dispatch, getState) => {
   const state = getState()
@@ -68,6 +75,10 @@ export const focusInput = value => ({
   value,
 })
 
+export const blurInput = () => ({
+  type: BLUR_INPUT,
+})
+
 const loadStart = ({ id, url }) => ({
   type: LOAD_START,
   id,
@@ -93,7 +104,7 @@ export const load = () => (dispatch, getState) => {
   // HACK
   // We don't know if iframe loaded successfully.
   // If no response after 3s, marked as fail.
-  const TIMEOUT = 3000
+  const TIMEOUT = 5000
   setTimeout(() => {
     if (!getState().tabs[id].isLoaded) {
       dispatch(loadFail(id))

@@ -39,6 +39,10 @@
     margin-left: 4px;
     margin-right: 2px;
     border: 1px solid var(--border);
+    &.active {
+      border: 1px solid #399df7;
+      height: 26px;
+    }
     & svg {
       margin-right: 4px;
     }
