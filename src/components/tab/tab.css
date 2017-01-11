@@ -46,6 +46,7 @@
     height: 16px;
     margin-left: 4px;
     margin-right: 4px;
+    user-select: none;
   }
   & .close {
     fill: #000;
