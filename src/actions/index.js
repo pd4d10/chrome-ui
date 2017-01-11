@@ -15,10 +15,33 @@ export const addTab = () => ({
   id: v4(),
 })
 
-export const closeTab = id => ({
-  type: CLOSE_TAB,
-  id,
-})
+export const closeTab = id => (dispatch, getState) => {
+  const state = getState()
+  const allIds = Object.keys(state.tabs)
+
+  // do not close last tab
+  if (allIds.length <= 1) {
+    return
+  }
+
+  // When active tab is closed, make right tab active
+  // If no right, make left active
+  let activeId = state.activeTab
+  if (id === state.activeTab) {
+    const position = allIds.indexOf(id)
+    if (position < allIds.length - 1) {
+      activeId = allIds[position + 1]
+    } else {
+      activeId = allIds[position - 1]
+    }
+  }
+
+  dispatch({
+    type: CLOSE_TAB,
+    id,
+    activeId,
+  })
+}
 
 export const selectTab = id => (dispatch, getState) => dispatch({
   type: SELECT_TAB,
