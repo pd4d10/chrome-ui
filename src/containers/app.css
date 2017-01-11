@@ -1,3 +1,5 @@
+@import url(../variables);
+
 body {
   margin: 0;
   padding: 0;
@@ -24,4 +26,18 @@ li {
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--border-radius);
+  border: 1px solid #c1c1c1;
+  box-shadow: 0 0 20px #aaa;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import './app.css'
-import style from './browser.css'
-import Tabs from './tabs'
-import Navigator from './navigator'
+import { pick } from 'lodash'
+import style from './app.css'
+import Tabs from '../components/tabs'
+import Navigator from '../components/navigator'
 import Frame from '../components/frame'
 
 const App = props => (
-  <div className={style.browser}>
+  <div className={style.app}>
     <Tabs {...props} />
-    <Navigator />
+    <Navigator {...pick(props, 'url')} />
     <Frame {...props} />
   </div>
 )
@@ -22,19 +22,5 @@ const mapStateToProps = state => ({
   })),
   url: state.tabs[state.activeTab].url,
 })
-
-// const mapDispatchToProps = dispatch => ({
-//   addTab: () => dispatch(addTab()),
-//   selectTab: id => () => dispatch(selectTab(id)),
-//   closeTab: id => (event) => {
-//     event.stopPropagation()
-//     return dispatch(closeTab(id))
-//   },
-//   // updateUrl: event => dispatch(updateUrl(event.target.value)),
-//   updateUrl: (event) => {
-//     event.preventDefault()
-//     console.log(event)
-//   },
-// })
 
 export default connect(mapStateToProps)(App)

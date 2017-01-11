@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { pick } from 'lodash'
 import { addTab, selectTab, closeTab } from '../../actions'
-import Tab from '../../components/tab'
+import Tab from '../tab'
 import style from './tabs.css'
 
 /* eslint-disable */
