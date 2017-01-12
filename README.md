@@ -4,11 +4,11 @@ Chrome UI built with web stack.
 
 Demo: https://pd4d10.github.io/chrome-ui/
 
-## FAQ
+## Trouble Shooting
 
-### Why webpage content is not loaded when I open Google, Twitter or GitHub?
+### Webpage content is not loaded, just showing blank
 
-Many websites refuse to show content in cross domain iframe, for secure reason.
+Many websites like Google, Twitter or GitHub, refuse to show content in cross domain iframe, for secure reason.
 
 Try `en.wikipedia.org` instead.
 
@@ -19,6 +19,12 @@ Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-
 Refused to display 'https://twitter.com/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'self'".
 Refused to display 'https://github.com/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".
 ```
+
+### It is messed up in my browser
+
+It is tested only on Chrome of Mac, for now.
+
+If you find a bug or style mess, please submit an issue. Thanks!
 
 ## Roadmap
 
