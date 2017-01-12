@@ -15,7 +15,6 @@
 .tabs {
   flex-grow: 1;
   display: flex;
-  flex-wrap: nowrap;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   height: 36px;

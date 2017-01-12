@@ -10,7 +10,7 @@ Demo: https://pd4d10.github.io/chrome-ui/
 
 Many websites like Google, Twitter or GitHub, refuse to show content in cross domain iframe, for secure reason.
 
-Try `en.wikipedia.org` instead.
+Try `www.bing.com` or `en.wikipedia.org` instead.
 
 If you press F12 to open devtools, you will see messages like follows:
 
