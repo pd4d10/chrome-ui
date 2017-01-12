@@ -41,3 +41,10 @@ export function getTitle(url) {
 export function getGithubWidget() {
   return '<iframe src="https://ghbtns.com/github-btn.html?user=pd4d10&repo=chrome-ui&type=star" frameborder="0" scrolling="0"></iframe>'
 }
+
+// Send analytic event
+export function sendEvent(...args) {
+  if (window.ga) {
+    window.ga('send', 'event', ...args)
+  }
+}

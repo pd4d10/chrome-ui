@@ -22,7 +22,7 @@ Refused to display 'https://github.com/' in a frame because an ancestor violates
 
 ### It is messed up in my browser
 
-It is tested only on Chrome of Mac, for now.
+It is tested only on Chrome, for now.
 
 If you find a bug or style mess, please submit an issue. Thanks!
 
