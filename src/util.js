@@ -1,11 +1,18 @@
 import { capitalize } from 'lodash'
 
-// Add 'http://' prefix to a URL
+// Add 'https://' prefix to a URL
+// Must be 'https://' here because GitHub pages is loaded over HTTPS
+// HTTP request will be blocked by default
 export function completeUrl(url) {
-  if (/https?:\/\//.test(url)) {
+  if (/^https:\/\//.test(url)) {
     return url
   }
-  return `http://${url}`
+
+  if (/^http:\/\/(.*)/.test(url)) {
+    return url.replace(/^http/, 'https')
+  }
+
+  return `https://${url}`
 }
 
 // Guess favicon from url
