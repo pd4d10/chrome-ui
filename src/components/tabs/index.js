@@ -25,7 +25,7 @@ const Tabs = ({ tabs, dispatch }) => (
     <div
       className={style.widget}
       dangerouslySetInnerHTML={{__html:getGithubWidget()}}
-      onClick={() => sendEvent('star', 'click')}
+      onMouseEnter={() => sendEvent('star', 'click')}
     />
   </div>
 )
