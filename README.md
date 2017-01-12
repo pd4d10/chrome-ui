@@ -6,27 +6,19 @@ Demo: https://pd4d10.github.io/chrome-ui/
 
 ## Trouble Shooting
 
-### Webpage content is not loaded, just showing blank
+### Q: Webpage content is not loaded, just showing blank page
 
-Many websites like Google, Twitter or GitHub, refuse to show content in cross domain iframe, for secure reason.
+Many websites like Google, Twitter or GitHub, refuse to show content in cross domain iframe. Open devtools for more detail.
 
 Try `www.bing.com` or `en.wikipedia.org` instead.
 
-If you press F12 to open devtools, you will see messages like follows:
+### Q: It is messed up in my browser
 
-```
-Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-Options' to 'SAMEORIGIN'.
-Refused to display 'https://twitter.com/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'self'".
-Refused to display 'https://github.com/' in a frame because an ancestor violates the following Content Security Policy directive: "frame-ancestors 'none'".
-```
+It is tested only on Chrome for now.
 
-### It is messed up in my browser
+If you find a bug or style mess, please [submit an issue](https://github.com/pd4d10/chrome-ui/issues/new). Thanks!
 
-It is tested only on Chrome, for now.
-
-If you find a bug or style mess, please submit an issue. Thanks!
-
-## Roadmap
+## Todos
 
 * Add tests
 * Incognito mode theme
