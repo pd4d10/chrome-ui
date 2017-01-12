@@ -1,4 +1,4 @@
-# Chrome UI
+# Chrome UI [![Build Status](https://travis-ci.org/pd4d10/chrome-ui.svg?branch=master)](https://travis-ci.org/pd4d10/chrome-ui)
 
 Chrome UI built with web stack.
 
