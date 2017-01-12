@@ -91,11 +91,6 @@ export const loadSuccess = id => ({
   id,
 })
 
-const loadFail = id => ({
-  type: LOAD_FAIL,
-  id,
-})
-
 export const load = () => (dispatch, getState) => {
   // Ugly hack either
   // Make loaction input blur after submit
@@ -105,14 +100,4 @@ export const load = () => (dispatch, getState) => {
   const id = state.activeTab
   const url = state.input
   dispatch(loadStart({ id, url }))
-
-  // HACK
-  // We don't know if iframe loaded successfully.
-  // If no response after 3s, marked as fail.
-  const TIMEOUT = 5000
-  setTimeout(() => {
-    if (!getState().tabs[id].isLoaded) {
-      dispatch(loadFail(id))
-    }
-  }, TIMEOUT)
 }
