@@ -39,7 +39,7 @@ export function getTitle(url) {
 
 // Github start widget
 export function getGithubWidget() {
-  return '<iframe src="https://ghbtns.com/github-btn.html?user=pd4d10&repo=chrome-ui&type=star" frameborder="0" scrolling="0"></iframe>'
+  return '<iframe src="https://ghbtns.com/github-btn.html?user=pd4d10&repo=chrome-ui&type=star&count=true" frameborder="0" scrolling="0"></iframe>'
 }
 
 // Send analytic event

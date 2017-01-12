@@ -40,7 +40,7 @@
   margin: 0 8px;
   height: 20px;
   & iframe {
-    width: 53px;
+    width: 90px;
     height: 20px;
   }
 }
