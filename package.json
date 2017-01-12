@@ -2,7 +2,7 @@
   "name": "chrome-ui",
   "version": "1.0.0",
   "author": "pd4d10 <pd4d10@gmail.com>",
-  "homepage": "https://pd4d10.github.io",
+  "homepage": "https://pd4d10.github.io/chrome-ui/",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
