@@ -6,9 +6,9 @@ Demo: https://pd4d10.github.io/chrome-ui/
 
 ## Trouble Shooting
 
-### Q: Webpage content is not loaded, just showing blank page
+### Q: When I open Google, Twitter or GitHub, it shows blank page instead of webpage content
 
-Many websites like Google, Twitter or GitHub, refuse to show content in cross domain iframe. Open devtools for more detail.
+Because these sites have HTTP Header Field `X-Frame-Options` set. See http://stackoverflow.com/a/19843216.
 
 Try `www.bing.com` or `en.wikipedia.org` instead.
 
