@@ -6,9 +6,9 @@ Demo: https://pd4d10.github.io/chrome-ui/
 
 ## Trouble Shooting
 
-### Q: When I open Google, Twitter or GitHub, it shows blank page instead of webpage content
+### Q: It shows blank page instead of webpage content
 
-Because these sites have HTTP Header Field `X-Frame-Options` set. See http://stackoverflow.com/a/19843216.
+Because the site you visited has HTTP Header Field `X-Frame-Options` set. See http://stackoverflow.com/a/19843216.
 
 Try `www.bing.com` or `en.wikipedia.org` instead.
 
