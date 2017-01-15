@@ -14,8 +14,6 @@ Try `www.bing.com` or `en.wikipedia.org` instead.
 
 ### Q: It is messed up in my browser
 
-It is tested only on Chrome for now.
-
 If you find a bug or style mess, please [submit an issue](https://github.com/pd4d10/chrome-ui/issues/new). Thanks!
 
 ## Todos
