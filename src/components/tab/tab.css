@@ -9,7 +9,6 @@
   flex-basis: 218px;
   display: flex;
   min-width: 0; /* http://stackoverflow.com/questions/34934586/white-space-nowrap-and-flexbox-did-not-work-in-chrome */
-  align-items: center;
   position: relative;
   background-color: var(--background);
   border-top: 1px solid var(--border);
@@ -38,6 +37,7 @@
   }
   & .favicon {
     z-index: 100;
+    align-self: center;
     width: 16px;
     height: 16px;
     margin-left: 4px;
