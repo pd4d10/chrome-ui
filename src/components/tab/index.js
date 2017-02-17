@@ -20,11 +20,13 @@ const Tab = ({
       [style.active]: isActive,
     })}
   >
-    <img
-      src={url === '' ? require('../favicon.svg') : getFavicon(url)}
-      className={style.favicon}
-      alt="favicon"
-    />
+    {url === '' ? <div className={style.placeholder} /> : (
+      <img
+        src={getFavicon(url)}
+        className={style.favicon}
+        alt="favicon"
+      />
+    )}
     <div className={style.content}>{title}</div>
     <TabClose onClick={close} />
   </li>

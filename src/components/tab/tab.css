@@ -35,6 +35,10 @@
       border-bottom: 1px solid var(--nav);
     }
   }
+  & .placeholder {
+    width: 4px;
+    user-select: none;
+  }
   & .favicon {
     z-index: 100;
     align-self: center;
@@ -84,6 +88,7 @@
   }
 
   & .content {
+    z-index: 100;
     flex-grow: 1;
     padding-left: 2px;
     font-size: 12.6px;
