@@ -23,7 +23,7 @@ li {
 
 :global(#root) {
   height: 100%;
-  padding: 12px;
+  padding: 8px 16px 16px;
 }
 
 *, *::before, *::after {
@@ -38,16 +38,9 @@ li {
 
 .options {
   display: flex;
-  margin-bottom: 6px;
-}
-
-.widget {
-  margin: 0 8px;
-  height: 20px;
-  & iframe {
-    width: 90px;
-    height: 20px;
-  }
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .container {
