@@ -10,8 +10,10 @@ import reducers from './reducers'
 
 const id = v4()
 const id2 = v4()
+const id3 = v4()
+
 const presistedState = Immutable({
-  activeTab: id,
+  activeTab: id3,
   tabs: {
     [id]: {
       url: 'https://www.bing.com',
@@ -23,6 +25,13 @@ const presistedState = Immutable({
     [id2]: {
       url: 'https://en.wikipedia.org',
       title: 'Wikipedia',
+      isLoading: true,
+      isLoaded: false,
+      isFailed: false,
+    },
+    [id3]: {
+      url: '',
+      title: 'New Tab',
       isLoading: true,
       isLoaded: false,
       isFailed: false,

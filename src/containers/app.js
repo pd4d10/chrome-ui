@@ -16,6 +16,11 @@ import { getGithubWidget } from '../util'
 const App = props => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
     <div className={style.app}>
+      <div className={classNames(style.container, { incognito: props.isIncognito })}>
+        <Tabs {...props} />
+        <Navigator {...pick(props, ['dispatch', 'url', 'isInputFocus', 'input'])} />
+        <Frame {...props} />
+      </div>
       <div className={style.options}>
         <Toggle
           label="Incognito mode"
@@ -29,13 +34,8 @@ const App = props => (
         />
         <div
           className={style.widget}
-          dangerouslySetInnerHTML={{ __html: getGithubWidget() }} // eslint-disable-line
+          dangerouslySetInnerHTML={{ __html: getGithubWidget() }}  // eslint-disable-line
         />
-      </div>
-      <div className={classNames(style.container, { incognito: props.isIncognito })}>
-        <Tabs {...props} />
-        <Navigator {...pick(props, ['dispatch', 'url', 'isInputFocus', 'input'])} />
-        <Frame {...props} />
       </div>
     </div>
   </MuiThemeProvider>

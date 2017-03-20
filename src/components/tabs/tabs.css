@@ -15,13 +15,20 @@
 .tabs {
   flex-grow: 1;
   display: flex;
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  height: 36px;
-  padding: 8px 20px 0 12px;
+  align-items: center;
+  justify-content: space-between;
+  & ul {
+    flex-grow: 1;
+    display: flex;
+    padding: 8px 20px 0 12px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    height: 36px;
+  }
 }
 
 .add {
+  flex-shrink: 0;
   background: #d0d0d0;
   width: 26px;
   height: 15px;
@@ -32,6 +39,16 @@
   transform: skewx(25deg);
   &:hover {
     background: #d9d9d9;
+  }
+}
+
+.incognito {
+  visibility: hidden;
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  & path {
+    fill: #fff;
   }
 }
 
@@ -46,5 +63,8 @@
         border-color: #555;
       }
     }
+  }
+  & .incognito {
+    visibility: visible;
   }
 }
