@@ -3,7 +3,7 @@ import { pick } from 'lodash'
 import { addTab, selectTab, closeTab } from '../../actions'
 import Tab from '../tab'
 import style from './tabs.css'
-import { getGithubWidget, sendEvent } from '../../util'
+import { getGithubWidget } from '../../util'
 
 /* eslint-disable */
 const Tabs = ({ tabs, dispatch }) => (
@@ -25,7 +25,6 @@ const Tabs = ({ tabs, dispatch }) => (
     <div
       className={style.widget}
       dangerouslySetInnerHTML={{__html:getGithubWidget()}}
-      onMouseEnter={() => sendEvent('star', 'click')}
     />
   </div>
 )
