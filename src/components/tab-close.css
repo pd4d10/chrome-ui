@@ -1,14 +1,23 @@
 .close {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   z-index: 100;
   align-self: center;
   margin-left: 2px;
   margin-right: 2px;
-  & path {
-    fill: #555;
+  border-radius: 50%;
+
+  & svg {
+    width: 12px;
+    height: 12px;
+    & path {
+      fill: #555;
+    }
   }
+
   &:hover {
     background: #e25c4d;
     & path {
