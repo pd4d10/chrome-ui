@@ -41,6 +41,15 @@ li {
   margin-bottom: 6px;
 }
 
+.widget {
+  margin: 0 8px;
+  height: 20px;
+  & iframe {
+    width: 90px;
+    height: 20px;
+  }
+}
+
 .container {
   flex-grow: 1;
   display: flex;

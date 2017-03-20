@@ -35,15 +35,6 @@
   }
 }
 
-.widget {
-  margin: 0 8px;
-  height: 20px;
-  & iframe {
-    width: 90px;
-    height: 20px;
-  }
-}
-
 :global(.incognito) {
   & .container {
     background: #1e1e1e;

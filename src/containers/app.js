@@ -11,6 +11,7 @@ import Tabs from '../components/tabs'
 import Navigator from '../components/navigator'
 import Frame from '../components/frame'
 import { toggleIncognito } from '../actions'
+import { getGithubWidget } from '../util'
 
 const App = props => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -22,6 +23,13 @@ const App = props => (
           onToggle={(e, isInputChecked) => {
             props.dispatch(toggleIncognito(isInputChecked))
           }}
+          style={{
+            width: '200px',
+          }}
+        />
+        <div
+          className={style.widget}
+          dangerouslySetInnerHTML={{ __html: getGithubWidget() }} // eslint-disable-line
         />
       </div>
       <div className={classNames(style.container, { incognito: props.isIncognito })}>
