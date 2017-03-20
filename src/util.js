@@ -4,6 +4,11 @@ import { capitalize } from 'lodash'
 // Must be 'https://' here because GitHub pages is loaded over HTTPS
 // HTTP request will be blocked by default
 export function completeUrl(url) {
+  // No dot in URL, redirect to Bing search
+  if (!url.includes('.')) {
+    return `https://www.bing.com/search?q=${encodeURIComponent(url)}`
+  }
+
   if (/^https:\/\//.test(url)) {
     return url
   }
