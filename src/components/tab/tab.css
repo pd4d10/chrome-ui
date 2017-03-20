@@ -14,10 +14,11 @@
   border-top: 1px solid var(--border);
   margin: 0 5px;
   font-size: 0;
-  transition: background-color .5s;
   &:hover {
+    transition: background-color .5s;
     background: var(--hover);
     &::before, &::after {
+      transition: background-color .5s;
       background: var(--hover);
     }
   }
@@ -25,10 +26,8 @@
     background: var(--nav);
     height: 29px;
     border-bottom: 1px solid var(--nav);
-    transition: all 0s;
     &::before, &::after {
       z-index: 10;
-      transition: all 0s;
       align-self: flex-start;
       height: 28px;
       background: var(--nav);
@@ -70,7 +69,6 @@
     border-bottom: 1px solid var(--border);
     transform: skewx(-25deg);
     transform-origin: left top;
-    transition: background-color .5s;
   }
   &::after {
     content: '';
@@ -84,7 +82,6 @@
     border-bottom: 1px solid var(--border);
     transform: skewx(25deg);
     transform-origin: right top;
-    transition: background-color .5s;
   }
 
   & .content {

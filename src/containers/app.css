@@ -23,7 +23,7 @@ li {
 
 :global(#root) {
   height: 100%;
-  padding: 16px;
+  padding: 12px 24px 24px;
 }
 
 *, *::before, *::after {
@@ -38,7 +38,7 @@ li {
 
 .options {
   display: flex;
-  margin-top: 8px;
+  margin-bottom: 12px;
   align-items: center;
   justify-content: space-between;
 }
