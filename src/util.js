@@ -30,7 +30,7 @@ export function getFavicon(url) {
 
 // Fake title
 export function getTitle(url) {
-  const arr = url.split('.')
+  const arr = url.replace(/^https:\/\//, '').split('.')
   switch (arr.length) {
     case 2: // twitter.com
       return capitalize(arr[0])
