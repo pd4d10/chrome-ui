@@ -25,3 +25,15 @@
     }
   }
 }
+
+:global(.incognito) {
+  & .close {
+    & svg {
+      /*background: #505050;
+      border-color: #3d3d3d;*/
+    }
+    & path {
+      fill: #eee;
+    }
+  }
+}

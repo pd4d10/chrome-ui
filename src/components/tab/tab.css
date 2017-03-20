@@ -101,3 +101,32 @@
     text-overflow: clip;
   }
 }
+
+:global(.incognito) {
+  & .tab {
+    background: #373737;
+    border-color: #373737;
+    &::before, &::after {
+      background: #373737;
+      border-color: #161616;
+    }
+
+    &:hover {
+      background: #555;
+      &::before, &::after {
+        background: #555;
+      }
+    }
+
+    &.active {
+      background: #505050;
+      border-color: #161616;
+      border-bottom-color: #505050;
+      &::before, &::after {
+        background: #505050;
+        border-color: #161616;
+        border-bottom-color: #505050;
+      }
+    }
+  }
+}

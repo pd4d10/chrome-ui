@@ -29,6 +29,7 @@ const presistedState = Immutable({
     },
   },
   input: '',
+  isIncognito: false,
 })
 
 const middlewares = [thunk]

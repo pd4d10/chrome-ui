@@ -13,6 +13,8 @@ export const LOAD_START = 'LOAD_START'
 export const LOAD_SUCCESS = 'LOAD_SUCCESS'
 export const LOAD_FAIL = 'LOAD_FAIL'
 
+export const TOGGLE_INCOGNITO = 'TOGGLE_INCOGNITO'
+
 export const addTab = () => {
   // This is an ugly hack.
   // When new tab is opened, location input should focus.
@@ -102,3 +104,8 @@ export const load = () => (dispatch, getState) => {
   const url = completeUrl(state.input)
   dispatch(loadStart({ id, url }))
 }
+
+export const toggleIncognito = value => ({
+  type: TOGGLE_INCOGNITO,
+  value,
+})

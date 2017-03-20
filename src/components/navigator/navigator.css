@@ -68,3 +68,34 @@
     }
   }
 }
+
+:global(.incognito) {
+  & .nav {
+    background: #505050;
+    border-color: #161616;
+    & a {
+      &:hover {
+        background: #666;
+      }
+    }
+    & svg {
+      & path {
+        fill: #ccc;
+      }
+    }
+    & form {
+      background: #616161;
+      border-color: #3d3d3d;
+      &.active {
+        border-color: #399df7;
+      }
+    }
+    & input {
+      color: #fff;
+      background: #616161;
+      &:-webkit-autofill {
+        background-color: #616161;
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ li {
 
 :global(#root) {
   height: 100%;
-  padding: 24px;
+  padding: 12px;
 }
 
 *, *::before, *::after {
@@ -34,6 +34,17 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.options {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--border-radius);
   border: 1px solid #c1c1c1;
   box-shadow: 0 0 20px #aaa;
@@ -42,4 +53,8 @@ li {
 .content {
   flex-grow: 1;
   display: flex;
+}
+
+:global(.incognito) {
+  color: #fff;
 }

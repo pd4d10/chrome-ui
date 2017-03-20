@@ -12,3 +12,7 @@
 .hidden {
   display: none;
 }
+
+:global(.incognito) {
+  /*background:#323232;*/
+}

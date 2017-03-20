@@ -43,3 +43,17 @@
     height: 20px;
   }
 }
+
+:global(.incognito) {
+  & .container {
+    background: #1e1e1e;
+    & .add {
+      background: #373737;
+      border-color: #373737;
+      &:hover {
+        background: #555;
+        border-color: #555;
+      }
+    }
+  }
+}
