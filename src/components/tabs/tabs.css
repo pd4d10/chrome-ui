@@ -29,7 +29,7 @@
 
 .add {
   flex-shrink: 0;
-  background: #d0d0d0;
+  background: #d9d9d9;
   width: 26px;
   height: 15px;
   border-radius: 2px;
@@ -38,7 +38,10 @@
   align-self: center;
   transform: skewx(25deg);
   &:hover {
-    background: #d9d9d9;
+    background: #e4e4e4;
+  }
+  &:active {
+    background: #ccc;
   }
 }
 
@@ -46,7 +49,7 @@
   visibility: hidden;
   width: 24px;
   height: 24px;
-  margin-right: 4px;
+  margin-right: 8px;
   & path {
     fill: #fff;
   }
@@ -61,6 +64,10 @@
       &:hover {
         background: #555;
         border-color: #555;
+      }
+      &:active {
+        background: #333;
+        border-color: #333;
       }
     }
   }
