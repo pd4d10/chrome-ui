@@ -14,14 +14,14 @@ const presistedState = Immutable({
   activeTab: id,
   tabs: {
     [id]: {
-      url: 'www.bing.com',
+      url: 'https://www.bing.com',
       title: 'Bing',
       isLoading: true,
       isLoaded: false,
       isFailed: false,
     },
     [id2]: {
-      url: 'en.wikipedia.org',
+      url: 'https://en.wikipedia.org',
       title: 'Wikipedia',
       isLoading: true,
       isLoaded: false,

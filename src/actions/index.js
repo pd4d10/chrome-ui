@@ -1,4 +1,5 @@
 import { v4 } from 'uuid'
+import { completeUrl } from '../util'
 
 export const ADD_TAB = 'ADD_TAB'
 export const CLOSE_TAB = 'CLOSE_TAB'
@@ -98,6 +99,6 @@ export const load = () => (dispatch, getState) => {
 
   const state = getState()
   const id = state.activeTab
-  const url = state.input
+  const url = completeUrl(state.input)
   dispatch(loadStart({ id, url }))
 }

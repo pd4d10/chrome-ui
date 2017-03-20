@@ -1,15 +1,15 @@
-import { CHANGE_INPUT, SELECT_TAB, ADD_TAB, FOCUS_INPUT, CLOSE_TAB } from '../actions'
+import * as actions from '../actions'
 
 export default function input(state = '', action) {
   switch (action.type) {
-    case CHANGE_INPUT:
-    case FOCUS_INPUT:
+    case actions.CHANGE_INPUT:
+    case actions.FOCUS_INPUT:
       return action.value
-    case SELECT_TAB:
+    case actions.SELECT_TAB:
+    case actions.LOAD_START:
+    case actions.CLOSE_TAB:
       return action.url
-    case CLOSE_TAB:
-      return action.url
-    case ADD_TAB:
+    case actions.ADD_TAB:
       return ''
     default:
       return state
