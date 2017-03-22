@@ -4,7 +4,25 @@ Chrome UI built with web stack.
 
 Demo: https://pd4d10.github.io/chrome-ui/
 
+## Why?
+
+An idea to use web technologies (CSS and JS) to simulate native UI, although not perfectly.
+
+It is firstly inspired by [Chrome Tabs](http://adamschwartz.co/chrome-tabs/).
+
+See discussion on [Hacker News](https://news.ycombinator.com/item?id=13380999) and [Echo JS](http://www.echojs.com/news/22273).
+
+## How does it work?
+
+No magic, just `iframe`, with some trick to make it work as expected :)
+
+Tabs' style is implemented with CSS.
+
 ## Trouble Shooting
+
+### HTTP site cannot be loaded, will auto redirect to HTTPS
+
+Yes, it is. Because iframes with `src` set to HTTP will be blocked by HTTPS site.
 
 ### It shows blank page instead of webpage content
 
