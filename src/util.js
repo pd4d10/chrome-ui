@@ -5,7 +5,7 @@ import { capitalize } from 'lodash'
 // HTTP request will be blocked by default
 export function completeUrl(url) {
   // No dot in URL, redirect to Bing search
-  if (!url.includes('.')) {
+  if (url.indexOf('.') === -1) {
     return `https://www.bing.com/search?q=${encodeURIComponent(url)}`
   }
 
