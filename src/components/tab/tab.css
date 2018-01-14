@@ -1,129 +1,162 @@
-:root {
-  --background: #dbdbdb;
-  --hover: #eee;
-  --border: #bbb;
-  --nav: #f2f2f2;
-}
-
 .tab {
   flex-basis: 218px;
   display: flex;
   min-width: 0; /* http://stackoverflow.com/questions/34934586/white-space-nowrap-and-flexbox-did-not-work-in-chrome */
   position: relative;
-  background-color: var(--background);
-  border-top: 1px solid var(--border);
+  background-color: #dbdbdb;
+  border-top: 1px solid #bbb;
   margin: 0 5px;
   font-size: 0;
-  &:hover {
-    transition: background-color .5s;
-    background: var(--hover);
-    &::before, &::after {
-      transition: background-color .5s;
-      background: var(--hover);
-    }
-  }
-  &.active {
-    background: var(--nav);
-    height: 29px;
-    border-bottom: 1px solid var(--nav);
-    &::before, &::after {
-      z-index: 10;
-      align-self: flex-start;
-      height: 28px;
-      background: var(--nav);
-      border-bottom: 1px solid var(--nav);
-    }
-  }
-  & .placeholder {
-    width: 4px;
-    user-select: none;
-  }
-  & .favicon {
-    z-index: 100;
-    align-self: center;
-    width: 16px;
-    height: 16px;
-    margin-left: 4px;
-    margin-right: 4px;
-    user-select: none;
-  }
-  & .close {
-    fill: #000;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    &:hover {
-      fill: #fff;
-      background: #f00;
-    }
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: 0;
-    left: 0;
-    width: 16px;
-    height: 28px;
-    background-color: var(--background);
-    border-left: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    transform: skewx(-25deg);
-    transform-origin: left top;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    width: 16px;
-    height: 28px;
-    background-color: var(--background);
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    transform: skewx(25deg);
-    transform-origin: right top;
-  }
-
-  & .content {
-    z-index: 100;
-    flex-grow: 1;
-    padding-left: 2px;
-    font-size: 12.6px;
-    line-height: 28px;
-    cursor: default;
-    max-width: 200px;
-    user-select: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-  }
+}
+.tab:hover {
+  transition: background-color 0.5s;
+  background: #eee;
+}
+.tab:hover::before,
+.tab:hover::after {
+  transition: background-color 0.5s;
+  background: #eee;
 }
 
-:global(.incognito) {
-  & .tab {
-    background: #373737;
-    border-color: #373737;
-    &::before, &::after {
-      background: #373737;
-      border-color: #161616;
-    }
+.tab.active {
+  background: #f2f2f2;
+  height: 29px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.tab.active::before,
+.tab.active::after {
+  z-index: 10;
+  align-self: flex-start;
+  height: 28px;
+  background: #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
 
-    &:hover {
-      background: #555;
-      &::before, &::after {
-        background: #555;
-      }
-    }
+.tab-placeholder {
+  width: 4px;
+  user-select: none;
+}
+.tab-favicon {
+  z-index: 100;
+  align-self: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  user-select: none;
+}
+.tab-close {
+  /* fill: #000;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; */
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+  align-self: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 50%;
+}
+.tab-close:hover {
+  fill: #fff;
+  background: #f00;
+}
+.tab-close svg {
+  width: 12px;
+  height: 12px;
+}
 
-    &.active {
-      background: #505050;
-      border-color: #161616;
-      border-bottom-color: #505050;
-      &::before, &::after {
-        background: #505050;
-        border-color: #161616;
-        border-bottom-color: #505050;
-      }
-    }
-  }
+.tab-close path {
+  fill: #555;
+}
+
+.tab-close:hover {
+  background: #e25c4d;
+}
+.tab-close:hover path {
+  fill: #fff;
+}
+
+.tab::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  width: 16px;
+  height: 28px;
+  background-color: #dbdbdb;
+  border-left: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  transform: skewx(-25deg);
+  transform-origin: left top;
+}
+.tab::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 16px;
+  height: 28px;
+  background-color: #dbdbdb;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  transform: skewx(25deg);
+  transform-origin: right top;
+}
+.tab-content {
+  z-index: 100;
+  flex-grow: 1;
+  padding-left: 2px;
+  font-size: 12.6px;
+  line-height: 28px;
+  cursor: default;
+  max-width: 200px;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.incognito .tab {
+  background: #373737;
+  border-color: #373737;
+}
+
+.incognito .tab::before,
+.incognito .tab::after {
+  background: #373737;
+  border-color: #161616;
+}
+
+.incognito .tab:hover {
+  background: #555;
+}
+.incognito .tab:hover::before,
+.incognito .tab:hover::after {
+  background: #555;
+}
+
+.incognito .tab.active {
+  background: #505050;
+  border-color: #161616;
+  border-bottom-color: #505050;
+}
+.incognito .tab.active::before,
+.incognito .tab.active::after {
+  background: #505050;
+  border-color: #161616;
+  border-bottom-color: #505050;
+}
+
+/* .incognito .tab-close svg {
+  background: #505050;
+  border-color: #3d3d3d;
+} */
+
+.incognito .tab-close path {
+  fill: #eee;
 }

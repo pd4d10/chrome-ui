@@ -1,101 +1,88 @@
-:root {
-  --hover: #ccc;
-  --border: #bbb;
-  --nav: #f2f2f2;
-  --icon: #6d6d6d;
-  --icon-hover: #dfdfdf;
-  --icon-focus: #aaa;
-}
-
 .nav {
   display: flex;
   align-items: center;
-  background: var(--nav);
-  border-top: 1px solid var(--border);
+  background: #f2f2f2;
+  border-top: 1px solid #bbb;
   border-bottom: 1px solid #ddd;
   padding-left: 4px;
   padding-right: 4px;
   height: 38px;
-  & a {
-    border-radius: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding: 4px;
-    height: 24px;
-    &:hover {
-      background: var(--icon-hover);
-    }
-    &:focus {
-      background: var(--icon-focus);
-    }
-  }
-  & svg {
-    width: 16px;
-    height: 16px;
-    & path {
-      fill: var(--icon);
-    }
-  }
-  & form {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    background: #fff;
-    height: 28px;
-    border-radius: 4px;
-    margin-left: 4px;
-    margin-right: 2px;
-    border: 1px solid #ccc;
-    &.active {
-      border: 1px solid #399df7;
-      height: 26px;
-    }
-    & svg {
-      margin-right: 4px;
-    }
-    & input {
-      display: block;
-      border: none;
-      width: 100%;
-      padding-left: 20px;
-      font-size: 13.6px;
-      &:focus {
-        outline: none;
-      }
-      &:-webkit-autofill {
-        background-color: #fff;
-      }
-    }
-  }
+}
+.nav a {
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 4px;
+  height: 24px;
+}
+.nav a:hover {
+  background: #dfdfdf;
+}
+.nav a:focus {
+  background: #aaa;
+}
+.nav svg {
+  width: 16px;
+  height: 16px;
+}
+.nav path {
+  fill: #6d6d6d;
+}
+.nav form {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  height: 28px;
+  border-radius: 4px;
+  margin-left: 4px;
+  margin-right: 2px;
+  border: 1px solid #ccc;
+}
+.nav form.active {
+  border: 1px solid #399df7;
+  height: 26px;
+}
+.nav form svg {
+  margin-right: 4px;
+}
+.nav form input {
+  display: block;
+  border: none;
+  width: 100%;
+  padding-left: 20px;
+  font-size: 13.6px;
+}
+.nav form input:focus {
+  outline: none;
+}
+.nav form input:-webkit-autofill {
+  background-color: #fff;
 }
 
-:global(.incognito) {
-  & .nav {
-    background: #505050;
-    border-color: #161616;
-    & a {
-      &:hover {
-        background: #666;
-      }
-    }
-    & svg {
-      & path {
-        fill: #ddd;
-      }
-    }
-    & form {
-      background: #616161;
-      border-color: #3d3d3d;
-      &.active {
-        border-color: #399df7;
-      }
-    }
-    & input {
-      color: #fff;
-      background: #616161;
-      &:-webkit-autofill {
-        background-color: #616161;
-      }
-    }
-  }
+.incognito .nav {
+  background: #505050;
+  border-color: #161616;
+}
+
+.incognito .nav a:hover {
+  background: #666;
+}
+.incognito .nav path {
+  fill: #ddd;
+}
+.incognito .nav form {
+  background: #616161;
+  border-color: #3d3d3d;
+}
+.incognito .nav form.active {
+  border-color: #399df7;
+}
+.incognito .nav input {
+  color: #fff;
+  background: #616161;
+}
+
+.incognito .nav input:-webkit-autofill {
+  background-color: #616161;
 }

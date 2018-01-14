@@ -1,18 +1,18 @@
-.content {
+.frame {
   flex-grow: 1;
   display: flex;
-
-  & iframe {
-    border: 0;
-    width: 100%;
-    min-height: 100%; /* This fix Edge */
-  }
 }
 
-.hidden {
+.frame iframe {
+  border: 0;
+  width: 100%;
+  min-height: 100%; /* This fix Edge */
+}
+
+.frame-hidden {
   display: none;
 }
 
-:global(.incognito) {
-  /*background:#323232;*/
-}
+/* :global(.incognito) {
+  background:#323232;
+} */

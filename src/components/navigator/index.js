@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import style from './navigator.css'
 import Back from '../back'
 import Forward from '../forward'
 import Reload from '../reload'
@@ -8,27 +8,36 @@ import Star from '../star'
 import Setting from '../setting'
 import Input from './input'
 import { load } from '../../actions'
+import './navigator.css'
 
-const handleSubmit = dispatch => (event) => {
+const handleSubmit = dispatch => event => {
   event.preventDefault()
   return dispatch(load())
 }
 
 const Navigator = ({ url, isInputFocus, input, dispatch }) => (
-  <div className={style.nav}>
-    <a><Back /></a>
-    <a><Forward /></a>
-    <a><Reload /></a>
+  <div className="nav">
+    <a>
+      <Back />
+    </a>
+    <a>
+      <Forward />
+    </a>
+    <a>
+      <Reload />
+    </a>
     <form
       onSubmit={handleSubmit(dispatch)}
       className={classNames({
-        [style.active]: isInputFocus,
+        active: isInputFocus,
       })}
     >
       <Input {...{ url, isInputFocus, input, dispatch }} />
       <Star />
     </form>
-    <a><Setting /></a>
+    <a>
+      <Setting />
+    </a>
   </div>
 )
 

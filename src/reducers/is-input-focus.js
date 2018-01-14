@@ -1,4 +1,10 @@
-import { FOCUS_INPUT, BLUR_INPUT, ADD_TAB, SELECT_TAB, CLOSE_TAB } from '../actions'
+import {
+  FOCUS_INPUT,
+  BLUR_INPUT,
+  ADD_TAB,
+  SELECT_TAB,
+  CLOSE_TAB,
+} from '../actions'
 
 export default function isInputFocus(state = false, action) {
   switch (action.type) {

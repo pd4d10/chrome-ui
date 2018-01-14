@@ -43,13 +43,15 @@ const presistedState = Immutable({
 
 const middlewares = [thunk]
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose // eslint-disable-line
-const store = createStore(reducers, presistedState, composeEnhancers(
-  applyMiddleware(...middlewares),
-))
+const store = createStore(
+  reducers,
+  presistedState,
+  composeEnhancers(applyMiddleware(...middlewares))
+)
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 )

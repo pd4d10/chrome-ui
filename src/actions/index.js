@@ -57,11 +57,12 @@ export const closeTab = id => (dispatch, getState) => {
   })
 }
 
-export const selectTab = id => (dispatch, getState) => dispatch({
-  type: SELECT_TAB,
-  id,
-  url: getState().tabs[id].url,
-})
+export const selectTab = id => (dispatch, getState) =>
+  dispatch({
+    type: SELECT_TAB,
+    id,
+    url: getState().tabs[id].url,
+  })
 
 export const updateUrl = ({ id, url }) => ({
   type: UPDATE_URL,

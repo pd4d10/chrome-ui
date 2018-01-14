@@ -1,22 +1,22 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 import { pick } from 'lodash'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import Toggle from 'material-ui/Toggle'
-
-import style from './app.css'
 import Tabs from '../components/tabs'
 import Navigator from '../components/navigator'
 import Frame from '../components/frame'
 import { toggleIncognito } from '../actions'
 import { getGithubWidget } from '../util'
+import './app.css'
 
 const App = props => (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
-    <div className={style.app}>
-      <div className={style.options}>
+    <div className="app">
+      <div className="app-options">
         <Toggle
           label="Incognito mode"
           labelPosition="right"
@@ -28,13 +28,19 @@ const App = props => (
           }}
         />
         <div
-          className={style.widget}
-          dangerouslySetInnerHTML={{ __html: getGithubWidget() }}  // eslint-disable-line
+          className="app-widget"
+          dangerouslySetInnerHTML={{ __html: getGithubWidget() }} // eslint-disable-line
         />
       </div>
-      <div className={classNames(style.container, { incognito: props.isIncognito })}>
+      <div
+        className={classNames('app-container', {
+          incognito: props.isIncognito,
+        })}
+      >
         <Tabs {...props} />
-        <Navigator {...pick(props, ['dispatch', 'url', 'isInputFocus', 'input'])} />
+        <Navigator
+          {...pick(props, ['dispatch', 'url', 'isInputFocus', 'input'])}
+        />
         <Frame {...props} />
       </div>
     </div>

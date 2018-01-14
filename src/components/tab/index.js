@@ -1,34 +1,26 @@
 /* eslint-disable */
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { getFavicon } from '../../util'
 import TabClose from '../tab-close'
-import style from './tab.css'
+import './tab.css'
 
-const Tab = ({
-  id,
-  url,
-  title,
-  isActive,
-  select,
-  close,
-}) => (
+const Tab = ({ id, url, title, isActive, select, close }) => (
   <li
     key={id}
     onClick={select}
-    className={classNames(style.tab, {
-      [style.active]: isActive,
+    className={classNames('tab', {
+      active: isActive,
     })}
   >
-    {url === '' ? <div className={style.placeholder} /> : (
-      <img
-        src={getFavicon(url)}
-        className={style.favicon}
-        alt="favicon"
-      />
+    {url === '' ? (
+      <div className="tab-placeholder" />
+    ) : (
+      <img src={getFavicon(url)} className="tab-favicon" alt="favicon" />
     )}
-    <div className={style.content}>{title}</div>
-    <TabClose onClick={close} />
+    <div className="tab-content">{title}</div>
+    <TabClose onClick={close} className="tab-close" />
   </li>
 )
 

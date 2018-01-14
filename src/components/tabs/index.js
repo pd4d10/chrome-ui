@@ -1,29 +1,29 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { pick } from 'lodash'
 import { addTab, selectTab, closeTab } from '../../actions'
 import Tab from '../tab'
-import style from './tabs.css'
 import Incognito from '../incognito'
+import './tabs.css'
 
-/* eslint-disable */
 const Tabs = ({ tabs, dispatch }) => (
-  <div className={style.container}>
-    <div className={style.tabs}>
+  <div className="tabs-container">
+    <div className="tabs">
       <ul>
         {tabs.map(tab => (
           <Tab
             key={tab.id}
             {...pick(tab, ['id', 'url', 'title', 'isActive'])}
             select={() => dispatch(selectTab(tab.id))}
-            close={(event) => {
+            close={event => {
               event.stopPropagation()
               return dispatch(closeTab(tab.id))
             }}
           />
         ))}
-        <li onClick={() => dispatch(addTab())} className={style.add} />
+        <li onClick={() => dispatch(addTab())} className="tabs-add" />
       </ul>
-      <Incognito className={style.incognito} />
+      <Incognito className="tabs-incognito" />
     </div>
   </div>
 )

@@ -1,15 +1,9 @@
-:root {
-  --background: #dbdbdb;
-  --border: #bbb;
-  --border-radius: 4px;
-}
-
-.container {
+.tabs-container {
   display: flex;
   align-items: center;
-  background: var(--background);
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
+  background: #dbdbdb;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .tabs {
@@ -17,61 +11,59 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  & ul {
-    flex-grow: 1;
-    display: flex;
-    padding: 8px 20px 0 12px;
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    height: 36px;
-  }
+}
+.tabs ul {
+  flex-grow: 1;
+  display: flex;
+  padding: 8px 20px 0 12px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 36px;
 }
 
-.add {
+.tabs-add {
   flex-shrink: 0;
   background: #d9d9d9;
   width: 26px;
   height: 15px;
   border-radius: 2px;
   margin-left: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid #bbb;
   align-self: center;
   transform: skewx(25deg);
-  &:hover {
-    background: #e4e4e4;
-  }
-  &:active {
-    background: #ccc;
-  }
+}
+.tabs-add:hover {
+  background: #e4e4e4;
+}
+.tabs-add:active {
+  background: #ccc;
 }
 
-.incognito {
+.tabs-incognito {
   visibility: hidden;
   width: 24px;
   height: 24px;
   margin-right: 8px;
-  & path {
-    fill: #fff;
-  }
+}
+.tabs-incognito path {
+  fill: #fff;
 }
 
-:global(.incognito) {
-  & .container {
-    background: #1e1e1e;
-    & .add {
-      background: #373737;
-      border-color: #373737;
-      &:hover {
-        background: #555;
-        border-color: #555;
-      }
-      &:active {
-        background: #333;
-        border-color: #333;
-      }
-    }
-  }
-  & .incognito {
-    visibility: visible;
-  }
+.incognito .tabs-container {
+  background: #1e1e1e;
+}
+.incognito .tabs-add {
+  background: #373737;
+  border-color: #373737;
+}
+.incognito .tabs-add:hover {
+  background: #555;
+  border-color: #555;
+}
+.incognito .tabs-add:active {
+  background: #333;
+  border-color: #333;
+}
+.incognito .tabs-incognito {
+  visibility: visible;
 }

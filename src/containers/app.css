@@ -1,14 +1,12 @@
-:root {
-  --border-radius: 4px;
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Copied from GitHub */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; /* Copied from GitHub */
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -21,12 +19,14 @@ li {
   list-style: none;
 }
 
-:global(#root) {
+#root {
   height: 100%;
   padding: 12px 24px 24px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -36,27 +36,27 @@ li {
   height: 100%;
 }
 
-.options {
+.app-options {
   display: flex;
   margin-bottom: 12px;
   align-items: center;
   justify-content: space-between;
 }
 
-.container {
+.app-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
   border: 1px solid #c1c1c1;
   box-shadow: 0 0 20px #aaa;
 }
 
-.content {
+/* .content {
   flex-grow: 1;
   display: flex;
-}
+} */
 
-:global(.incognito) {
+.incognito {
   color: #fff;
 }
