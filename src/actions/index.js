@@ -33,7 +33,7 @@ export const closeTab = id => (dispatch, getState) => {
 
   // Do not close last tab
   if (allIds.length <= 1) {
-    alert('This is the last tab :)') // eslint-disable-line
+    alert('This is the last tab :)')
     return
   }
 

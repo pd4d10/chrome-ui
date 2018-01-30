@@ -11,31 +11,58 @@ import { getTitle } from '../util'
 export default function tabs(state = {}, action) {
   switch (action.type) {
     case ADD_TAB:
-      return state.set(action.id, {
-        title: 'New Tab',
-        url: '',
-        isLoading: false,
-        isLoaded: false,
-        isFailed: false,
-      })
-    case CLOSE_TAB:
-      return state.without(action.id)
+      return {
+        ...state,
+        [action.id]: {
+          title: 'New Tab',
+          url: '',
+          isLoading: false,
+          isLoaded: false,
+          isFailed: false,
+        },
+      }
+    case CLOSE_TAB: {
+      const s = { ...state }
+      delete s[action.id]
+      return s
+    }
     case UPDATE_URL:
-      return state.setIn([action.id, 'url'], action.url)
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          url: action.url,
+        },
+      }
     case LOAD_START:
-      return state
-        .setIn([action.id, 'isLoading'], true)
-        .setIn([action.id, 'isLoaded'], false)
-        .setIn([action.id, 'url'], action.url)
-        .setIn([action.id, 'title'], getTitle(action.url))
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          isLoading: true,
+          isLoaded: false,
+          url: action.url,
+          title: getTitle(action.url),
+        },
+      }
     case LOAD_SUCCESS:
-      return state
-        .setIn([action.id, 'isLoading'], false)
-        .setIn([action.id, 'isLoaded'], true)
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          isLoading: false,
+          isLoaded: true,
+        },
+      }
     case LOAD_FAIL:
-      return state
-        .setIn([action.id, 'isLoading'], false)
-        .setIn([action.id, 'isFailed'], true)
+      return {
+        ...state,
+        [action.id]: {
+          ...state[action.id],
+          isLoading: false,
+          isFailed: true,
+        },
+      }
     default:
       return state
   }

@@ -29,7 +29,7 @@ const App = props => (
         />
         <div
           className="app-widget"
-          dangerouslySetInnerHTML={{ __html: getGithubWidget() }} // eslint-disable-line
+          dangerouslySetInnerHTML={{ __html: getGithubWidget() }}
         />
       </div>
       <div

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { changeInput, focusInput, blurInput } from '../../actions'
 
-/* eslint-disable */
 export default class Input extends Component {
   constructor() {
     super()
