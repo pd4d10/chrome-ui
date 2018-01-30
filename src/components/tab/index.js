@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { getFavicon } from '../../util'
-import TabClose from '../tab-close'
+import { TabClose } from '../icons'
 import './tab.css'
 
 const Tab = ({ id, url, title, isActive, select, close }) => (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { completeUrl } from '../../util'
 import { loadSuccess } from '../../actions'
-import style from './frame.css'
+import './frame.css'
 
 const handleLoad = ({ dispatch, id }) => () => dispatch(loadSuccess(id))
 

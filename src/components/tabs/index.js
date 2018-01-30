@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { pick } from 'lodash'
 import { addTab, selectTab, closeTab } from '../../actions'
 import Tab from '../tab'
-import Incognito from '../incognito'
+import { Incognito } from '../icons'
 import './tabs.css'
 
 const Tabs = ({ tabs, dispatch }) => (
