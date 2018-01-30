@@ -12,6 +12,7 @@ const Frame = ({ isIncognito, tabs, dispatch }) => (
   <div className="frame">
     {tabs.map(({ id, url, isActive }) => (
       <iframe
+        title={id}
         className={classNames({ 'frame-hidden': !isActive })}
         src={url ? completeUrl(url) : null}
         key={id}
