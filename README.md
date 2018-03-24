@@ -4,7 +4,7 @@ Chrome browser UI built with web technologies
 
 Demo: https://pd4d10.github.io/chrome-ui/
 
-<img width="609" src="assets/demo.png" alt="demo" />
+<img width="709" src="assets/screenshot.png" alt="demo" />
 
 ## How does it work?
 
