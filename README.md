@@ -1,8 +1,6 @@
 # Chrome UI [![Build Status](https://travis-ci.org/pd4d10/chrome-ui.svg?branch=master)](https://travis-ci.org/pd4d10/chrome-ui)
 
-Chrome browser UI built with web technologies
-
-Demo: https://pd4d10.github.io/chrome-ui/
+Chrome browser UI built with web technologies. [Live demo](https://pd4d10.github.io/chrome-ui/)
 
 <img width="709" src="assets/screenshot.png" alt="demo" />
 
